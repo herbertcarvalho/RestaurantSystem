@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Common;
+using Application.Interfaces;
 
 namespace Application.Commands.CreateReservation;
 
@@ -13,4 +14,4 @@ public record CreateReservationCommand(
     string? SpecialRequests,
     bool? RequiresDeposit,
     decimal? DepositAmount
-    ) : ICommand<Guid>;
+    ) : ICommand<ApiResponse<Guid>>;
