@@ -1,26 +1,32 @@
+
+using Application.Commands.CreateReservation;
+using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RestaurantSystem.Controllers
-{
-    [ApiController]
-    [Route("[controller]")]
-    public class ReservationsController : ControllerBase
-    {
-        private static readonly string[] Summaries =
-        [
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        ];
+namespace RestaurantSystem.Controllers;
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
+[ApiController]
+[Route("[controller]")]
+public class ReservationsController : ControllerBase
+{
+    private readonly CommandDispatcher commandDispatcher;
+
+    private static readonly string[] Summaries =
+    [
+        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    ];
+
+    public ReservationsController(CommandDispatcher _commandDispatcher)
+    {
+        commandDispatcher = _commandDispatcher;
     }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateReservation(/*[FromBody] CreateReservationRequest request*/)
+    {
+        var command = new CreateReservationCommand { /* map properties */ };
+        var result = await commandDispatcher.DispatchAsync<CreateReservationCommand, Guid>(command);
+        return Created($"/api/v1/reservations/{result}", result);
+    }
+
 }

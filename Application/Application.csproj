@@ -9,11 +9,11 @@
   <ItemGroup>
     <Folder Include="EventHandlers\" />
     <Folder Include="Common\" />
-    <Folder Include="Commands\" />
     <Folder Include="Queries\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
   </ItemGroup>
 
