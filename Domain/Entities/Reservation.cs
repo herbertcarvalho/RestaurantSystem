@@ -1,17 +1,17 @@
-﻿namespace Domain.Entities;
+﻿using Domain.Extensions;
 
-public class Reservation
+namespace Domain.Entities;
+
+public class Reservation : Entity
 {
-    public int Id { get; set; }
     public int Status { get; set; }
-    public int CreatedAt { get; set; }
     public int CustomerId { get; set; }
     public int RestaurantId { get; set; }
     public int NumberOfGuests { get; set; }
-    public bool? RequiresDeposit { get; set; }
     public Guid Guid { get; set; }
-    public string SpecialRequests { get; set; }
-    public decimal DepositAmount { get; set; }
+    public bool? RequiresDeposit { get; set; }
+    public string? SpecialRequests { get; set; }
+    public decimal? DepositAmount { get; set; }
 
     public virtual Customer Customer { get; set; }
     public virtual Restaurant Restaurant { get; set; }
