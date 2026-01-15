@@ -9,6 +9,7 @@ public class Reservation
     public int RestaurantId { get; set; }
     public int NumberOfGuests { get; set; }
     public bool? RequiresDeposit { get; set; }
+    public Guid Guid { get; set; }
     public string SpecialRequests { get; set; }
     public decimal DepositAmount { get; set; }
 
