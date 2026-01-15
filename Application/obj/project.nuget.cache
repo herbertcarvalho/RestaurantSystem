@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "nHmLVvPUY1g=",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\RestaurantSystem\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Herbert\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.2\\microsoft.extensions.dependencyinjection.10.0.2.nupkg.sha512",
+    "C:\\Users\\Herbert\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.2\\microsoft.extensions.dependencyinjection.abstractions.10.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

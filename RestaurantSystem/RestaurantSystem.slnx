@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="../Application/Application.csproj" />
     <Project Path="../Domain/Domain.csproj" />
     <Project Path="../Infrastructure/Infrastructure.csproj" />
     <Project Path="RestaurantSystem.Api.csproj" />
