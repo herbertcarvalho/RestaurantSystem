@@ -1,5 +1,8 @@
+using Application;
 using Application.Interfaces;
+using Infrastructure.DbContext;
 using Infrastructure.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,11 +12,22 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddPersistenceContexts(builder.Configuration);
+builder.Services.AddValidation();
+builder.Services.AddCustomIdentity(builder.Configuration);
 builder.Services.AddSwaggerGen();
+builder.Services.AddServices();
+builder.Services.AddCommands();
+builder.Services.AddHealthChecks().AddDbContextCheck<ApplicationDbContext>();
 
 builder.Services.AddScoped<CommandDispatcher>();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    db.Database.Migrate();
+}
 
 app.UseSwagger();
 app.UseSwaggerUI(options =>

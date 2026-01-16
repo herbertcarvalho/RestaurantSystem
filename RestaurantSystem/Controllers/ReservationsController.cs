@@ -10,13 +10,10 @@ namespace RestaurantSystem.Api.Controllers;
 [Route("[controller]")]
 public class ReservationsController(CommandDispatcher _commandDispatcher) : ControllerBase
 {
-
     [HttpPost]
-    public async Task<IActionResult> CreateReservation(/*[FromBody] CreateReservationRequest request*/)
+    public async Task<IActionResult> CreateReservation([FromBody] CreateReservationCommand request)
     {
-        var command = new CreateReservationCommand("", "", "", DateTime.Now, 4, 4, null, null, null);
-        var result = await _commandDispatcher.DispatchAsync<CreateReservationCommand, ApiResponse<Guid>>(command);
+        var result = await _commandDispatcher.DispatchAsync<CreateReservationCommand, ApiResponse<Guid>>(request);
         return Created($"/api/v1/reservations/{result}", result);
     }
-
 }
