@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260116004919_Initial")]
+    [Migration("20260116010817_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -147,37 +147,37 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(4626),
+                            CreatedAt = new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7173),
                             Name = "PENDING"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5460),
+                            CreatedAt = new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7877),
                             Name = "CONFIRMED"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5461),
+                            CreatedAt = new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7878),
                             Name = "CHECKED IN"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5462),
+                            CreatedAt = new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7879),
                             Name = "COMPLETED"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5463),
+                            CreatedAt = new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7880),
                             Name = "CANCELLED"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5464),
+                            CreatedAt = new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7881),
                             Name = "NO SHOW"
                         });
                 });
@@ -205,6 +205,14 @@ namespace Infrastructure.Migrations
                         .HasName("pk_restaurant");
 
                     b.ToTable("restaurant", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2026, 1, 16, 1, 8, 16, 582, DateTimeKind.Utc).AddTicks(7255),
+                            Name = "Standart Restaurant"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>

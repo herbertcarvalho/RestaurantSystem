@@ -243,13 +243,18 @@ namespace Infrastructure.Migrations
                 columns: new[] { "id", "created_at", "name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(4626), "PENDING" },
-                    { 2, new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5460), "CONFIRMED" },
-                    { 3, new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5461), "CHECKED IN" },
-                    { 4, new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5462), "COMPLETED" },
-                    { 5, new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5463), "CANCELLED" },
-                    { 6, new DateTime(2026, 1, 16, 0, 49, 19, 388, DateTimeKind.Utc).AddTicks(5464), "NO SHOW" }
+                    { 1, new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7173), "PENDING" },
+                    { 2, new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7877), "CONFIRMED" },
+                    { 3, new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7878), "CHECKED IN" },
+                    { 4, new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7879), "COMPLETED" },
+                    { 5, new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7880), "CANCELLED" },
+                    { 6, new DateTime(2026, 1, 16, 1, 8, 16, 581, DateTimeKind.Utc).AddTicks(7881), "NO SHOW" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "restaurant",
+                columns: new[] { "id", "created_at", "name" },
+                values: new object[] { 1, new DateTime(2026, 1, 16, 1, 8, 16, 582, DateTimeKind.Utc).AddTicks(7255), "Standart Restaurant" });
 
             migrationBuilder.CreateIndex(
                 name: "ix_asp_net_role_claims_role_id",

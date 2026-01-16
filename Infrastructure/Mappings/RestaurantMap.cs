@@ -15,5 +15,9 @@ internal class RestaurantMap : IEntityTypeConfiguration<Restaurant>
         builder.Property(x => x.Name)
                .HasMaxLength(200)
                .IsRequired();
+
+        builder.HasData(
+            new Restaurant() { Id = 1, Name = "Standart Restaurant" }
+            );
     }
 }
