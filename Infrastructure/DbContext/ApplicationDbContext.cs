@@ -8,13 +8,8 @@ using System.Data;
 
 namespace Infrastructure.DbContext;
 
-public class ApplicationDbContext : IdentityDbContext<IdentityUser<int>, IdentityRole<int>, int>, IApplicationDbContext
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<IdentityUser<int>, IdentityRole<int>, int>(options), IApplicationDbContext
 {
-
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-    {
-    }
-
     public IDbConnection Connection => Database.GetDbConnection();
 
     public bool HasChanges => ChangeTracker.HasChanges();
@@ -35,14 +30,14 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser<int>, Identit
             property.SetColumnType("decimal(18,2)");
         }
 
-        modelBuilder.ToSnakeCaseNames();
-        modelBuilder.ApplyUtcDateTimeConverter();
         modelBuilder.UseIdentityColumns();
         modelBuilder.ApplyConfiguration(new CustomerMap());
         modelBuilder.ApplyConfiguration(new ReservationMap());
         modelBuilder.ApplyConfiguration(new ReservationStatusMap());
         modelBuilder.ApplyConfiguration(new RestaurantMap());
 
+
         base.OnModelCreating(modelBuilder);
+        modelBuilder.ToSnakeCaseNames();
     }
 }
