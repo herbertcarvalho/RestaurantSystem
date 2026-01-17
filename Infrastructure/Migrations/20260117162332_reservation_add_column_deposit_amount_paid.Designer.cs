@@ -3,6 +3,7 @@ using System;
 using Infrastructure.DbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260117162332_reservation_add_column_deposit_amount_paid")]
+    partial class reservation_add_column_deposit_amount_paid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,10 +123,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("status");
 
-                    b.Property<string>("transactionId")
-                        .HasColumnType("text")
-                        .HasColumnName("transaction_id");
-
                     b.HasKey("Id")
                         .HasName("pk_reservation");
 
@@ -164,37 +163,37 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2026, 1, 17, 17, 2, 24, 502, DateTimeKind.Utc).AddTicks(8213),
+                            CreatedAt = new DateTime(2026, 1, 17, 16, 23, 31, 975, DateTimeKind.Utc).AddTicks(1518),
                             Name = "PENDING"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2026, 1, 17, 17, 2, 24, 502, DateTimeKind.Utc).AddTicks(8882),
+                            CreatedAt = new DateTime(2026, 1, 17, 16, 23, 31, 975, DateTimeKind.Utc).AddTicks(2188),
                             Name = "CONFIRMED"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2026, 1, 17, 17, 2, 24, 502, DateTimeKind.Utc).AddTicks(8883),
+                            CreatedAt = new DateTime(2026, 1, 17, 16, 23, 31, 975, DateTimeKind.Utc).AddTicks(2189),
                             Name = "CHECKED IN"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2026, 1, 17, 17, 2, 24, 502, DateTimeKind.Utc).AddTicks(8884),
+                            CreatedAt = new DateTime(2026, 1, 17, 16, 23, 31, 975, DateTimeKind.Utc).AddTicks(2190),
                             Name = "COMPLETED"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2026, 1, 17, 17, 2, 24, 502, DateTimeKind.Utc).AddTicks(8884),
+                            CreatedAt = new DateTime(2026, 1, 17, 16, 23, 31, 975, DateTimeKind.Utc).AddTicks(2191),
                             Name = "CANCELLED"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2026, 1, 17, 17, 2, 24, 502, DateTimeKind.Utc).AddTicks(8885),
+                            CreatedAt = new DateTime(2026, 1, 17, 16, 23, 31, 975, DateTimeKind.Utc).AddTicks(2192),
                             Name = "NO SHOW"
                         });
                 });
@@ -227,7 +226,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2026, 1, 17, 17, 2, 24, 503, DateTimeKind.Utc).AddTicks(8333),
+                            CreatedAt = new DateTime(2026, 1, 17, 16, 23, 31, 976, DateTimeKind.Utc).AddTicks(2423),
                             Name = "Standart Restaurant"
                         });
                 });
