@@ -45,3 +45,10 @@
 /Infrastructure/obj/Debug/net10.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 /Infrastructure/obj/Debug/net10.0/Infrastructure.genruntimeconfig.cache
 /.vs/RestaurantSystem.slnx
+/.vs/ProjectEvaluation
+/Domain/obj/Debug/net10.0/Domain.assets.cache
+/Domain/obj/Debug/net10.0/Domain.csproj.AssemblyReference.cache
+/Domain/obj/Domain.csproj.nuget.dgspec.json
+/Domain/obj/Domain.csproj.nuget.g.props
+/Domain/obj/Domain.csproj.nuget.g.targets
+/Domain/obj/project.assets.json
