@@ -1,8 +1,9 @@
-using Application;
+using Application.Extensions;
 using Application.Interfaces;
 using Infrastructure.DbContext;
 using Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
+using RestaurantSystem.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,16 +13,21 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddPersistenceContexts(builder.Configuration);
+builder.Services.AddRepositories();
 builder.Services.AddValidation();
 builder.Services.AddCustomIdentity(builder.Configuration);
 builder.Services.AddSwaggerGen();
 builder.Services.AddServices();
 builder.Services.AddCommands();
+builder.Services.AddQueries();
 builder.Services.AddHealthChecks().AddDbContextCheck<ApplicationDbContext>();
 
 builder.Services.AddScoped<CommandDispatcher>();
+builder.Services.AddScoped<QueryDispatcher>();
 
 var app = builder.Build();
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 using (var scope = app.Services.CreateScope())
 {
@@ -46,9 +52,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
