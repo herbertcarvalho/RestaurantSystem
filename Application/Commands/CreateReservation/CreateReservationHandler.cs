@@ -1,6 +1,8 @@
 ﻿using Application.Interfaces;
 using Domain.Common;
 using Domain.Entities;
+using Domain.Events;
+using Domain.Events.ReservationCreated;
 using Domain.Exceptions;
 using Domain.Repositories;
 using Domain.ValueObjects;
@@ -11,7 +13,8 @@ public class CreateReservationHandler(
     IReservationRepository reservationRepository,
     IRestaurantRepository restaurantRepository,
     ICustomerRepository customerRepository,
-    IUnitOfWork unitOfWork
+    IUnitOfWork unitOfWork,
+    DomainEventPublisher domainEventPublisher
     ) : ICommandHandler<CreateReservationCommand, ApiResponse<CreateReservationCommandResponse>>
 {
     public async Task<ApiResponse<CreateReservationCommandResponse>> HandleAsync(CreateReservationCommand command, CancellationToken ct = default)
@@ -41,6 +44,7 @@ public class CreateReservationHandler(
             RequiresDeposit = command.RequiresDeposit,
             SpecialRequests = command.SpecialRequests,
             DepositAmount = command.DepositAmount,
+            ReservationDate = command.ReservationDate
         };
 
         var transaction = await unitOfWork.BeginTransactionAsync();
@@ -61,6 +65,8 @@ public class CreateReservationHandler(
             await transaction.RollbackAsync();
             throw;
         }
+
+        await domainEventPublisher.PublishAsync(new ReservationCreatedEvent(newReservation.Id));
 
         var response = new CreateReservationCommandResponse(newReservation.Guid.ToString(),
             newReservation.Id,
