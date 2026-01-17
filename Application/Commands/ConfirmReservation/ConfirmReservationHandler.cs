@@ -26,7 +26,7 @@ public class ConfirmReservationHandler(
         await reservationRepository.UpdateAsync(reservation);
         await unitOfWork.SaveChangesAsync();
 
-        await domainEventPublisher.PublishAsync(new ReservationConfirmedEvent(reservation.Id));
+        await domainEventPublisher.PublishAsync(new ReservationConfirmedEvent(reservation.RestaurantId, reservation.Id));
 
         return ApiResponse<string>.Success("");
     }
@@ -56,7 +56,7 @@ public class ConfirmReservationWebhookHandler(
         await reservationRepository.UpdateAsync(reservation);
         await unitOfWork.SaveChangesAsync();
 
-        await domainEventPublisher.PublishAsync(new ReservationConfirmedEvent(reservation.Id));
+        await domainEventPublisher.PublishAsync(new ReservationConfirmedEvent(reservation.RestaurantId, reservation.Id));
 
         return ApiResponse<string>.Success("");
     }

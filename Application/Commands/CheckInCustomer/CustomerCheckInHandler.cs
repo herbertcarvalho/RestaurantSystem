@@ -27,7 +27,7 @@ public class CustomerCheckInHandler(
         await reservationRepository.UpdateAsync(reservation);
         await unitOfWork.SaveChangesAsync();
 
-        await domainEventPublisher.PublishAsync(new CustomerCheckedInEvent(reservation.Id));
+        await domainEventPublisher.PublishAsync(new CustomerCheckedInEvent(reservation.RestaurantId, reservation.Id));
 
         return ApiResponse<string>.Success("");
     }

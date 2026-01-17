@@ -65,7 +65,7 @@ public class CreateReservationHandler(
             throw;
         }
 
-        await domainEventPublisher.PublishAsync(new ReservationCreatedEvent(newReservation.Id));
+        await domainEventPublisher.PublishAsync(new ReservationCreatedEvent(newReservation.RestaurantId, newReservation.Id));
 
         var response = new CreateReservationCommandResponse(newReservation.Guid.ToString(),
             newReservation.Id,
