@@ -20,7 +20,9 @@ public class CommandDispatcher(IServiceProvider serviceProvider)
         {
             var validationResult = await validator.ValidateAsync(command, ct);
             if (!validationResult.IsValid)
-                throw new ValidationException(validationResult.Errors);
+                throw new ValidationException(string.Join(",",
+                    validationResult.Errors.Select(e => $"{e.PropertyName}: {e.ErrorMessage}")
+                ));
         }
 
         var handlerType = typeof(ICommandHandler<,>).MakeGenericType(typeof(TCommand), typeof(TResult));
