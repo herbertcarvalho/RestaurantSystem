@@ -1,4 +1,5 @@
-﻿using RabbitMQ.Client;
+﻿using Microsoft.Extensions.Configuration;
+using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 
@@ -8,13 +9,11 @@ public class RabbitMqPublisher : IRabbitMqPublisher
 {
     private readonly ConnectionFactory _factory;
 
-    public RabbitMqPublisher()
+    public RabbitMqPublisher(IConfiguration configuration)
     {
         _factory = new ConnectionFactory
         {
-            HostName = "localhost",
-            UserName = "booking",
-            Password = "booking123"
+            Uri = new Uri(configuration.GetConnectionString("RabbitMQ"))
         };
     }
 

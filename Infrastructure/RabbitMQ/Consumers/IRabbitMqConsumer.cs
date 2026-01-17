@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Services.ReservationServ;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RabbitMQ.Client;
@@ -14,14 +15,12 @@ public class RabbitMqConsumer : BackgroundService
     private IChannel? _channel;
     private readonly IServiceScopeFactory _scopeFactory;
 
-    public RabbitMqConsumer(IServiceScopeFactory scopeFactory)
+    public RabbitMqConsumer(IServiceScopeFactory scopeFactory, IConfiguration configuration)
     {
         _scopeFactory = scopeFactory;
         _factory = new ConnectionFactory
         {
-            HostName = "localhost",
-            UserName = "booking",
-            Password = "booking123"
+            Uri = new Uri(configuration.GetConnectionString("RabbitMQ"))
         };
     }
 
