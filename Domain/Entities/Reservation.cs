@@ -12,7 +12,13 @@ public class Reservation : Entity
     public bool? RequiresDeposit { get; set; }
     public string? SpecialRequests { get; set; }
     public decimal? DepositAmount { get; set; }
+    public decimal? DepositAmountPaid { get; set; }
     public DateTime ReservationDate { get; set; }
+
+    public string? ConfirmedBy { get; set; }
+    public string? Notes { get; set; }
+
+    public string? transactionId { get; set; }
 
     public virtual Customer Customer { get; set; }
     public virtual Restaurant Restaurant { get; set; }
