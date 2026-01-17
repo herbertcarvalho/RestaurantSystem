@@ -37,4 +37,10 @@ public class RepositoryAsync<T>(ApplicationDbContext dbContext) : IRepositoryAsy
         dbContext.Set<T>().Update(entity);
         return Task.CompletedTask;
     }
+
+    public virtual Task UpdateRangeAsync(ICollection<T> entity)
+    {
+        dbContext.Set<T>().UpdateRange(entity);
+        return Task.CompletedTask;
+    }
 }

@@ -1,4 +1,4 @@
-﻿namespace Domain.Events.ReservationConfirmed;
+﻿namespace Domain.Events;
 
 public record ReservationConfirmedEvent(int ReservationId) : IDomainEvent
 {

@@ -13,4 +13,6 @@ public interface IRepositoryAsync<T> where T : class
     Task UpdateAsync(T entity);
 
     Task DeleteAsync(T entity);
+
+    Task UpdateRangeAsync(ICollection<T> entity);
 }
