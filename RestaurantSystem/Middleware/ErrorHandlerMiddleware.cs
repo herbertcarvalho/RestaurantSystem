@@ -21,19 +21,21 @@ public class ErrorHandlerMiddleware(RequestDelegate next)
 
             switch (error)
             {
+                case InvalidActionException:
+                    response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    break;
+
                 case FluentValidation.ValidationException:
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                     break;
 
                 case NotFoundException:
-                    // not found error
                     response.StatusCode = (int)HttpStatusCode.NotFound;
                     break;
 
                 default:
-                    // unhandled error
                     response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                    //responseModel.Message = "Sorry we cant process this now.";
+                    responseModel.Message = "Sorry we cant process this now.";
                     break;
             }
             var result = JsonSerializer.Serialize(responseModel);

@@ -1,5 +1,6 @@
 using Application.Extensions;
 using Application.Interfaces;
+using Domain.Events;
 using Infrastructure.DbContext;
 using Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddPersistenceContexts(builder.Configuration);
 builder.Services.AddRepositories();
-builder.Services.AddValidation();
 builder.Services.AddCustomIdentity(builder.Configuration);
 builder.Services.AddSwaggerGen();
+builder.Services.AddDomainEvents();
 builder.Services.AddServices();
 builder.Services.AddCommands();
 builder.Services.AddQueries();
@@ -24,7 +25,8 @@ builder.Services.AddHealthChecks().AddDbContextCheck<ApplicationDbContext>();
 
 builder.Services.AddScoped<CommandDispatcher>();
 builder.Services.AddScoped<QueryDispatcher>();
-
+builder.Services.AddScoped<DomainEventPublisher>();
+builder.Services.AddValidation();
 var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlerMiddleware>();

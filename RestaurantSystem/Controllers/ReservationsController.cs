@@ -1,4 +1,5 @@
 
+using Application.Commands.ConfirmReservation;
 using Application.Commands.CreateReservation;
 using Application.Interfaces;
 using Application.Queries.GetAllReservationsPaged;
@@ -12,16 +13,23 @@ namespace RestaurantSystem.Api.Controllers;
 public class ReservationsController(CommandDispatcher commandDispatcher, QueryDispatcher queryDispatcher) : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> CreateReservation([FromBody] CreateReservationCommand request)
+    public async Task<IActionResult> CreateReservationCommand([FromBody] CreateReservationCommand request)
     {
         var result = await commandDispatcher.DispatchAsync<CreateReservationCommand, ApiResponse<CreateReservationCommandResponse>>(request);
         return Created($"/api/v1/reservations/{result}", result);
     }
 
     [HttpGet]
-    public async Task<IActionResult> CreateReservation([FromQuery] GetAllReservationsQuery request)
+    public async Task<IActionResult> GetAllReservationsQuery([FromQuery] GetAllReservationsQuery request)
     {
         var result = await queryDispatcher.DispatchAsync<GetAllReservationsQuery, PaginatedResponse<GetAllReservationsResponse>>(request);
-        return Created($"/api/v1/reservations/{result}", result);
+        return Ok(result);
+    }
+
+    [HttpPost("{id}/confirm")]
+    public async Task<IActionResult> ConfirmReservationCommand(int id, [FromBody] ConfirmReservationCommand request)
+    {
+        var result = await commandDispatcher.DispatchAsync<ConfirmReservationCommand, ApiResponse<string>>(id, request);
+        return Ok(result);
     }
 }
