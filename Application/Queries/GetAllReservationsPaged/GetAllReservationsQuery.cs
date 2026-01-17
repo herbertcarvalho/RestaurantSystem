@@ -13,7 +13,7 @@ public record GetAllReservationsQuery : PageOption, IQuery<PaginatedResponse<Get
     public DateTime? DateEnd { get; init; }
 }
 
-public record GetAllReservationsResponse : PageOption
+public record GetAllReservationsResponse
 {
     public int ReservationId { get; set; }
     public string ReservationCode { get; set; }

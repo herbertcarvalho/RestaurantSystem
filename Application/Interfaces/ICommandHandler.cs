@@ -10,6 +10,12 @@ public interface ICommandHandler<TCommand, TResult> where TCommand : ICommand<TR
     Task<TResult> HandleAsync(TCommand command, CancellationToken ct = default);
 }
 
+public interface ICommandWithIdHandler<TCommand, TResult>
+    where TCommand : ICommand<TResult>
+{
+    Task<TResult> HandleAsync(int id, TCommand command, CancellationToken ct = default);
+}
+
 public class CommandDispatcher(IServiceProvider serviceProvider)
 {
     public async Task<TResult> DispatchAsync<TCommand, TResult>(TCommand command, CancellationToken ct = default)
@@ -30,6 +36,28 @@ public class CommandDispatcher(IServiceProvider serviceProvider)
 
         var method = handlerType.GetMethod("HandleAsync");
         var task = (Task<TResult>)method!.Invoke(handler, [command, ct])!;
+
+        return await task;
+    }
+
+    public async Task<TResult> DispatchAsync<TCommand, TResult>(int id, TCommand command, CancellationToken ct = default)
+        where TCommand : ICommand<TResult>
+    {
+        var validator = serviceProvider.GetService<IValidator<TCommand>>();
+        if (validator != null)
+        {
+            var validationResult = await validator.ValidateAsync(command, ct);
+            if (!validationResult.IsValid)
+                throw new ValidationException(string.Join(",",
+                    validationResult.Errors.Select(e => $"{e.PropertyName}: {e.ErrorMessage}")
+                ));
+        }
+
+        var handlerType = typeof(ICommandWithIdHandler<,>).MakeGenericType(typeof(TCommand), typeof(TResult));
+        var handler = serviceProvider.GetService(handlerType);
+
+        var method = handlerType.GetMethod("HandleAsync");
+        var task = (Task<TResult>)method!.Invoke(handler, [id, command, ct])!;
 
         return await task;
     }
