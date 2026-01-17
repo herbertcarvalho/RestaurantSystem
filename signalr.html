@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SignalR Reservations</title>
+
+    <!-- SignalR client -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+</head>
+<body>
+
+    <h2>SignalR Reservation Listener</h2>
+
+    <button onclick="connect()">Connect to Restaurant 1</button>
+
+    <h3>Messages:</h3>
+    <ul id="messages"></ul>
+
+   <script>
+    let connection;
+
+    async function connect() {
+
+        connection = new signalR.HubConnectionBuilder()
+            .withUrl("https://localhost:7272/hubs/reservations")
+            .withAutomaticReconnect()
+            .build();
+
+        // All events from your dictionary
+        const events = [
+            "CustomerCheckIn",
+            "ReservationConfirmed",
+            "ReservationCreated",
+            "ReservationNoShow"
+        ];
+
+        // Dynamically register listeners
+        events.forEach(eventName => {
+            connection.on(eventName, data => {
+                console.log(eventName, data);
+                addMessage(`[${eventName}] ` + JSON.stringify(data));
+            });
+        });
+
+        try {
+            await connection.start();
+            addMessage("Connected to hub");
+
+            await connection.invoke("SubscribeToRestaurant", 1);
+            addMessage("Subscribed to restaurant 1");
+
+        } catch (err) {
+            console.error(err);
+            addMessage("Error: " + err);
+        }
+    }
+
+    function addMessage(text) {
+        const li = document.createElement("li");
+        li.innerText = text;
+        document.getElementById("messages").appendChild(li);
+    }
+</script>
+
+</body>
+</html>

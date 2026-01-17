@@ -29,8 +29,21 @@ builder.Services.AddScoped<CommandDispatcher>();
 builder.Services.AddScoped<QueryDispatcher>();
 builder.Services.AddScoped<DomainEventPublisher>();
 builder.Services.AddValidation();
-builder.Services.AddHangfireService(builder.Configuration);
+builder.Services.AddHangfireServiceSignalR(builder.Configuration);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DevCors", policy =>
+    {
+        policy.SetIsOriginAllowed(_ => true)
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
 var app = builder.Build();
+app.UseCors("DevCors");
+
+app.MapHubs();
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
 

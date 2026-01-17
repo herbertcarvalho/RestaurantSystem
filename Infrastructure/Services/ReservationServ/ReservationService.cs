@@ -20,7 +20,7 @@ public class ReservationService(
         foreach (var reservation in reservations)
         {
             reservation.Status = (int)EnumReservationStatus.NO_SHOW;
-            await domainEventPublisher.PublishAsync(new ReservationNoShowEvent(reservation.Id));
+            await domainEventPublisher.PublishAsync(new ReservationNoShowEvent(reservation.RestaurantId, reservation.Id));
         }
 
         await reservationRepository.UpdateRangeAsync(reservations);
@@ -39,16 +39,15 @@ public class ReservationService(
             foreach (var reservation in reservations)
             {
                 reservation.Status = (int)EnumReservationStatus.NO_SHOW;
-                await domainEventPublisher.PublishAsync(new ReservationNoShowEvent(reservation.Id));
+                await domainEventPublisher.PublishAsync(new ReservationNoShowEvent(reservation.RestaurantId, reservation.Id));
             }
 
-            await reservationRepository.UpdateRangeAsync(reservations);
+            await reservationRepository.UpdateRangeAsync([.. reservations]);
             await unitOfWork.SaveChangesAsync();
         }
         else
             foreach (var item in reservations.Select(x => x.Id).Chunk(100).ToList())
                 await rabbitMqPublisher.Publish("no-show", item);
 
-        //PUBLICAR LOTES DE 100 NO RABBITMQ
     }
 }

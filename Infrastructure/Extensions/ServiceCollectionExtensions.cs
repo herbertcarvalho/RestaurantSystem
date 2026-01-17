@@ -7,8 +7,11 @@ using Infrastructure.Persistence;
 using Infrastructure.RabbitMQ.Consumers;
 using Infrastructure.RabbitMQ.Publishers;
 using Infrastructure.Repositories;
+using Infrastructure.Services.Hubs;
+using Infrastructure.Services.Notifier;
 using Infrastructure.Services.ReservationServ;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -53,6 +56,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IReservationService, ReservationService>();
         services.AddScoped<IRabbitMqPublisher, RabbitMqPublisher>();
         services.AddHostedService<RabbitMqConsumer>();
+        services.AddScoped<ReservationNotifier>();
     }
 
     public static void AddCustomIdentity(this IServiceCollection services, IConfiguration configuration)
@@ -89,7 +93,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IRestaurantRepository, RestaurantRepository>();
     }
 
-    public static void AddHangfireService(this IServiceCollection services, IConfiguration configuration)
+    public static void AddHangfireServiceSignalR(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddHangfire(config =>
             config.UsePostgreSqlStorage(configuration.GetConnectionString("ApplicationConnection"),
@@ -99,10 +103,16 @@ public static class ServiceCollectionExtensions
                 }));
 
         services.AddHangfireServer();
+        services.AddSignalR();
     }
 
     public static void AddJobs()
     {
         NoShowProcessingJob.Register();
+    }
+
+    public static void MapHubs(this WebApplication app)
+    {
+        app.MapHub<ReservationHub>("/hubs/reservations");
     }
 }
