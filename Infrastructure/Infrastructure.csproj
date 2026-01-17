@@ -11,7 +11,6 @@
     <Folder Include="Migrations\" />
     <Folder Include="RabbitMQ\" />
     <Folder Include="Services\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>

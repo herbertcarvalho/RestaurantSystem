@@ -1,5 +1,7 @@
-﻿using Infrastructure.DbContext;
+﻿using Domain.Repositories;
+using Infrastructure.DbContext;
 using Infrastructure.Persistence;
+using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -68,5 +70,14 @@ public static class ServiceCollectionExtensions
                  IssuerSigningKey = new SymmetricSecurityKey(
                      Encoding.UTF8.GetBytes(configuration["Jwt:key"]))
              });
+    }
+
+    public static void AddRepositories(this IServiceCollection services)
+    {
+        services.AddTransient(typeof(IRepositoryAsync<>), typeof(RepositoryAsync<>));
+        services.AddTransient<IUnitOfWork, UnitOfWork>();
+        services.AddTransient<ICustomerRepository, CustomerRepository>();
+        services.AddTransient<IReservationRepository, ReservationRepository>();
+        services.AddTransient<IRestaurantRepository, RestaurantRepository>();
     }
 }

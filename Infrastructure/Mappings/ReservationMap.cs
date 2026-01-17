@@ -32,6 +32,8 @@ internal class ReservationMap : IEntityTypeConfiguration<Reservation>
 
         builder.Property(x => x.DepositAmount);
 
+        builder.Property(x => x.ReservationDate);
+
         builder.HasOne(x => x.Customer)
                .WithMany(x => x.Reservations)
                .HasForeignKey(x => x.CustomerId);
