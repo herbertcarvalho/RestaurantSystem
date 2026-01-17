@@ -1,7 +1,6 @@
 ﻿using Application.Interfaces;
 using Domain.Common;
 using Domain.Events;
-using Domain.Events.ReservationConfirmed;
 using Domain.Exceptions;
 using Domain.Repositories;
 using Domain.ValueObjects;

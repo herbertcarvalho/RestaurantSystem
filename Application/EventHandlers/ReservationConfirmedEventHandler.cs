@@ -1,5 +1,4 @@
 ﻿using Domain.Events;
-using Domain.Events.ReservationConfirmed;
 
 namespace Application.EventHandlers;
 

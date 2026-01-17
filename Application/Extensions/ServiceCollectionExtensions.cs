@@ -1,12 +1,11 @@
-﻿using Application.Commands.ConfirmReservation;
+﻿using Application.Commands.CheckInCustomer;
+using Application.Commands.ConfirmReservation;
 using Application.Commands.CreateReservation;
 using Application.EventHandlers;
 using Application.Interfaces;
 using Application.Queries.GetAllReservationsPaged;
 using Domain.Common;
 using Domain.Events;
-using Domain.Events.ReservationConfirmed;
-using Domain.Events.ReservationCreated;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -22,6 +21,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICommandWithIdHandler<ConfirmReservationCommand, ApiResponse<string>>, ConfirmReservationHandler>();
 
         services.AddScoped<ICommandHandler<ConfirmReservationWebhookCommand, ApiResponse<string>>, ConfirmReservationWebhookHandler>();
+
+        services.AddScoped<ICommandWithIdHandler<CustomerCheckInCommand, ApiResponse<string>>, CustomerCheckInHandler>();
     }
 
     public static void AddQueries(this IServiceCollection services)
@@ -33,6 +34,8 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<IDomainEventHandler<ReservationConfirmedEvent>, ReservationConfirmedEventHandler>();
         services.AddScoped<IDomainEventHandler<ReservationCreatedEvent>, ReservationCreatedEventHandler>();
+        services.AddScoped<IDomainEventHandler<CustomerCheckedInEvent>, CustomerCheckedInEventHandler>();
+        services.AddScoped<IDomainEventHandler<ReservationNoShowEvent>, ReservationNoShowEventHandler>();
     }
 
     public static IServiceCollection AddValidation(this IServiceCollection services)

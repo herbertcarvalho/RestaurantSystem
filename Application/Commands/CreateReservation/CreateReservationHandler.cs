@@ -2,7 +2,6 @@
 using Domain.Common;
 using Domain.Entities;
 using Domain.Events;
-using Domain.Events.ReservationCreated;
 using Domain.Exceptions;
 using Domain.Repositories;
 using Domain.ValueObjects;
