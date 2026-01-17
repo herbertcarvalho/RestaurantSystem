@@ -1,10 +1,12 @@
 using Application.Extensions;
 using Application.Interfaces;
 using Domain.Events;
+using Hangfire;
 using Infrastructure.DbContext;
 using Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 using RestaurantSystem.Api.Middleware;
+using ServiceCollectionExtensions = Infrastructure.Extensions.ServiceCollectionExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +29,7 @@ builder.Services.AddScoped<CommandDispatcher>();
 builder.Services.AddScoped<QueryDispatcher>();
 builder.Services.AddScoped<DomainEventPublisher>();
 builder.Services.AddValidation();
+builder.Services.AddHangfireService(builder.Configuration);
 var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
@@ -34,10 +37,9 @@ app.UseMiddleware<ErrorHandlerMiddleware>();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    await db.Database.EnsureDeletedAsync();
     db.Database.Migrate();
 }
-
+app.UseHangfireDashboard("/hangfire");
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
@@ -57,4 +59,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
+ServiceCollectionExtensions.AddJobs();
 app.Run();

@@ -1,4 +1,5 @@
 
+using Application.Commands.CheckInCustomer;
 using Application.Commands.ConfirmReservation;
 using Application.Commands.CreateReservation;
 using Application.Interfaces;
@@ -30,6 +31,13 @@ public class ReservationsController(CommandDispatcher commandDispatcher, QueryDi
     public async Task<IActionResult> ConfirmReservationCommand(int id, [FromBody] ConfirmReservationCommand request)
     {
         var result = await commandDispatcher.DispatchAsync<ConfirmReservationCommand, ApiResponse<string>>(id, request);
+        return Ok(result);
+    }
+
+    [HttpPut("{id}/check-in")]
+    public async Task<IActionResult> CustomerCheckInCommand(int id, [FromBody] CustomerCheckInCommand request)
+    {
+        var result = await commandDispatcher.DispatchAsync<CustomerCheckInCommand, ApiResponse<string>>(id, request);
         return Ok(result);
     }
 }
