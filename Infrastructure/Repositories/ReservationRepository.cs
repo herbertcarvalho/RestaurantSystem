@@ -11,7 +11,7 @@ namespace Infrastructure.Repositories;
 
 internal class ReservationRepository(ApplicationDbContext dbContext) : RepositoryAsync<Reservation>(dbContext), IReservationRepository
 {
-    public Task<PaginatedResponse<Reservation>> Get(string customerName, EnumReservationStatus? status, DateTime? start, DateTime? end, PageOption pageOption)
+    public async Task<PaginatedResponse<Reservation>> Get(string customerName, EnumReservationStatus? status, DateTime? start, DateTime? end, PageOption pageOption)
     {
         var query = Query()
                     .Include(x => x.Customer)
@@ -29,7 +29,13 @@ internal class ReservationRepository(ApplicationDbContext dbContext) : Repositor
         if (end is not null)
             query = query.Where(x => x.ReservationDate <= end);
 
-        return Query()
+        return await query
                 .ToPaginatedListAsync(pageOption);
     }
+
+    public async Task<Reservation> Get(string reservationCode)
+        => await Query().FirstOrDefaultAsync(x => x.Guid.ToString() == reservationCode);
+
+    public async Task<bool> Any(string transactionId)
+        => await Query().AnyAsync(x => x.transactionId == transactionId);
 }

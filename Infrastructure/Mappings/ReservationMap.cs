@@ -26,13 +26,21 @@ internal class ReservationMap : IEntityTypeConfiguration<Reservation>
         builder.Property(x => x.Guid)
                .IsRequired();
 
+        builder.Property(x => x.ReservationDate)
+               .IsRequired();
+
         builder.Property(x => x.RequiresDeposit);
 
         builder.Property(x => x.SpecialRequests);
 
         builder.Property(x => x.DepositAmount);
 
-        builder.Property(x => x.ReservationDate);
+        builder.Property(x => x.ConfirmedBy);
+
+        builder.Property(x => x.Notes);
+
+        builder.Property(x => x.transactionId);
+
 
         builder.HasOne(x => x.Customer)
                .WithMany(x => x.Reservations)

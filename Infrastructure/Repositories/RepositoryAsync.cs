@@ -34,7 +34,7 @@ public class RepositoryAsync<T>(ApplicationDbContext dbContext) : IRepositoryAsy
 
     public virtual Task UpdateAsync(T entity)
     {
-        dbContext.Entry(entity).CurrentValues.SetValues(entity);
+        dbContext.Set<T>().Update(entity);
         return Task.CompletedTask;
     }
 }
