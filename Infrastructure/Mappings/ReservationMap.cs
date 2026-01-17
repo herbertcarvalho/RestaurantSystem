@@ -41,6 +41,7 @@ internal class ReservationMap : IEntityTypeConfiguration<Reservation>
 
         builder.Property(x => x.transactionId);
 
+        builder.Property(x => x.CheckInTime);
 
         builder.HasOne(x => x.Customer)
                .WithMany(x => x.Reservations)
@@ -49,6 +50,5 @@ internal class ReservationMap : IEntityTypeConfiguration<Reservation>
         builder.HasOne(x => x.Restaurant)
                .WithMany(x => x.Reservations)
                .HasForeignKey(x => x.RestaurantId);
-
     }
 }

@@ -26,7 +26,7 @@ public class ReservationsController(CommandDispatcher commandDispatcher, QueryDi
         return Ok(result);
     }
 
-    [HttpPost("{id}/confirm")]
+    [HttpPut("{id}/confirm")]
     public async Task<IActionResult> ConfirmReservationCommand(int id, [FromBody] ConfirmReservationCommand request)
     {
         var result = await commandDispatcher.DispatchAsync<ConfirmReservationCommand, ApiResponse<string>>(id, request);

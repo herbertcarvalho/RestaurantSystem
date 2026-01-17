@@ -19,6 +19,7 @@ public class Reservation : Entity
     public string? Notes { get; set; }
 
     public string? transactionId { get; set; }
+    public DateTime? CheckInTime { get; set; }
 
     public virtual Customer Customer { get; set; }
     public virtual Restaurant Restaurant { get; set; }
