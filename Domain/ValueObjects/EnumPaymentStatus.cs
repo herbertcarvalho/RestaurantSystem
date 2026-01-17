@@ -1,5 +1,5 @@
 ﻿namespace Domain.ValueObjects;
 
-public enum PaymentStatus
+public enum EnumPaymentStatus
 {
 }

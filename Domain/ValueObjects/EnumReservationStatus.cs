@@ -1,6 +1,6 @@
 ﻿namespace Domain.ValueObjects;
 
-public enum ReservationStatus
+public enum EnumReservationStatus
 {
     PENDING,
     CONFIRMED,
