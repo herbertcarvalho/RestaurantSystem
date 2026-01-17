@@ -1,7 +1,13 @@
 ﻿using Domain.Repositories;
+using Hangfire;
+using Hangfire.PostgreSql;
 using Infrastructure.DbContext;
+using Infrastructure.Jobs;
 using Infrastructure.Persistence;
+using Infrastructure.RabbitMQ.Consumers;
+using Infrastructure.RabbitMQ.Publishers;
 using Infrastructure.Repositories;
+using Infrastructure.Services.ReservationServ;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +30,6 @@ public static class ServiceCollectionExtensions
 
     private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING_POSTGRES") ?? configuration.GetConnectionString("ApplicationConnection");
         services.AddDbContext<ApplicationDbContext>((sp, options) =>
             {
                 var interceptor = sp.GetRequiredService<DateTimeUtcInterceptor>();
@@ -45,6 +50,9 @@ public static class ServiceCollectionExtensions
     public static void AddServices(this IServiceCollection services)
     {
         services.AddScoped<DateTimeUtcInterceptor>();
+        services.AddScoped<IReservationService, ReservationService>();
+        services.AddScoped<IRabbitMqPublisher, RabbitMqPublisher>();
+        services.AddHostedService<RabbitMqConsumer>();
     }
 
     public static void AddCustomIdentity(this IServiceCollection services, IConfiguration configuration)
@@ -79,5 +87,22 @@ public static class ServiceCollectionExtensions
         services.AddTransient<ICustomerRepository, CustomerRepository>();
         services.AddTransient<IReservationRepository, ReservationRepository>();
         services.AddTransient<IRestaurantRepository, RestaurantRepository>();
+    }
+
+    public static void AddHangfireService(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddHangfire(config =>
+            config.UsePostgreSqlStorage(configuration.GetConnectionString("ApplicationConnection"),
+                new Hangfire.PostgreSql.PostgreSqlStorageOptions
+                {
+                    PrepareSchemaIfNecessary = true
+                }));
+
+        services.AddHangfireServer();
+    }
+
+    public static void AddJobs()
+    {
+        NoShowProcessingJob.Register();
     }
 }

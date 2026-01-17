@@ -38,4 +38,15 @@ internal class ReservationRepository(ApplicationDbContext dbContext) : Repositor
 
     public async Task<bool> Any(string transactionId)
         => await Query().AnyAsync(x => x.transactionId == transactionId);
+
+    public async Task<ICollection<Reservation>> GetNoShowReservations()
+        => await Query()
+                    .Where(x => x.Status == (int)EnumReservationStatus.CONFIRMED
+                            && x.ReservationDate < DateTime.UtcNow.AddMinutes(-30))
+                    .ToListAsync();
+
+    public async Task<ICollection<Reservation>> Get(ICollection<int> ids)
+        => await Query()
+                    .Where(x => ids.Contains(x.Id))
+                    .ToListAsync();
 }
