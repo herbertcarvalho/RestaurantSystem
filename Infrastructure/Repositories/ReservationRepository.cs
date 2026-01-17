@@ -11,7 +11,7 @@ namespace Infrastructure.Repositories;
 
 internal class ReservationRepository(ApplicationDbContext dbContext) : RepositoryAsync<Reservation>(dbContext), IReservationRepository
 {
-    public async Task<PaginatedResponse<Reservation>> Get(string customerName, EnumReservationStatus? status, DateTime? start, DateTime? end, PageOption pageOption)
+    public async Task<PaginatedResponse<Reservation>> Get(string customerName, EnumReservationStatus? status, DateTime? start, DateTime? end, PageOption pageOption, int? restaurantId = null)
     {
         var query = Query()
                     .Include(x => x.Customer)
@@ -28,6 +28,9 @@ internal class ReservationRepository(ApplicationDbContext dbContext) : Repositor
 
         if (end is not null)
             query = query.Where(x => x.ReservationDate <= end);
+
+        if (restaurantId is not null)
+            query = query.Where(x => x.RestaurantId == restaurantId);
 
         return await query
                 .ToPaginatedListAsync(pageOption);

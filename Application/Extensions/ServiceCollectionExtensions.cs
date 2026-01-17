@@ -4,6 +4,7 @@ using Application.Commands.CreateReservation;
 using Application.EventHandlers;
 using Application.Interfaces;
 using Application.Queries.GetAllReservationsPaged;
+using Application.Queries.GetDashboard;
 using Domain.Common;
 using Domain.Events;
 using FluentValidation;
@@ -28,6 +29,7 @@ public static class ServiceCollectionExtensions
     public static void AddQueries(this IServiceCollection services)
     {
         services.AddScoped<IQueryHandler<GetAllReservationsQuery, PaginatedResponse<GetAllReservationsResponse>>, GetAllReservationsHandler>();
+        services.AddScoped<IQueryHandler<GetDashboardQuery, ApiResponse<GetDashboardResponse>>, GetDashboardHandler>();
     }
 
     public static void AddDomainEvents(this IServiceCollection services)

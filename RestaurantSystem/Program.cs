@@ -30,6 +30,7 @@ builder.Services.AddScoped<QueryDispatcher>();
 builder.Services.AddScoped<DomainEventPublisher>();
 builder.Services.AddValidation();
 builder.Services.AddHangfireServiceSignalR(builder.Configuration);
+builder.Services.AddHybridCaching(builder.Configuration);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("DevCors", policy =>
@@ -52,6 +53,7 @@ using (var scope = app.Services.CreateScope())
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     db.Database.Migrate();
 }
+
 app.UseHangfireDashboard("/hangfire");
 app.UseSwagger();
 app.UseSwaggerUI(options =>
