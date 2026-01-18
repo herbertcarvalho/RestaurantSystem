@@ -33,6 +33,23 @@ services:
       SEQ_FIRSTRUN_NOAUTHENTICATION: "true"
     ports:
       - "5341:80"
+
+  booking-api:
+    build:
+      context: .
+      dockerfile: src/RestaurantBooking.Api/Dockerfile
+    depends_on:
+      - postgres
+      - redis
+      - rabbitmq
+      - seq
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=postgres;Database=rest;Username=booking;Password=booking123"
+      ConnectionStrings__Redis: "redis:6379"
+      ConnectionStrings__RabbitMQ: "amqp://booking:booking123@rabbitmq:5672"      
+      ConnectionStrings__Seq: "http://seq:5341"
+    ports:
+      - "5000:8080"
   
 volumes:
   postgres-data:
