@@ -52,3 +52,4 @@
 /Domain/obj/Domain.csproj.nuget.g.props
 /Domain/obj/Domain.csproj.nuget.g.targets
 /Domain/obj/project.assets.json
+/Tests/obj
