@@ -1,0 +1,633 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My Collection
+meta:
+  id: wrk_89938b4e6aef436583d71dc4413e2e61
+  created: 1720920404135
+  modified: 1720920404135
+  description: ""
+collection:
+  - name: Authorization
+    meta:
+      id: fld_2db94b20f1ca446e9275d5f79eaedd25
+      created: 1720924071565
+      modified: 1720924071565
+      sortKey: -1720924071565
+      description: ""
+  - name: Machine
+    meta:
+      id: fld_852c0e6eff2849ae904617e9e72e7524
+      created: 1720924089352
+      modified: 1720924089352
+      sortKey: -1720924089352
+      description: ""
+  - name: UserMachine
+    meta:
+      id: fld_851b7a283fff4559b17a8fa1bd066242
+      created: 1720932724663
+      modified: 1720932724663
+      sortKey: -1720932724664
+      description: ""
+  - name: MachineConfiguration
+    meta:
+      id: fld_385f1b4044b74b5486cc71042908bb33
+      created: 1723400800704
+      modified: 1723400800704
+      sortKey: -1723400800704
+      description: ""
+  - name: DESAFIO
+    meta:
+      id: fld_cdc7e18f8a02432eb34c32cf349c9ce2
+      created: 1743855190532
+      modified: 1743855190532
+      sortKey: -1743855190532
+      description: ""
+  - name: DesafioRestaurant
+    meta:
+      id: fld_1f920c672756425f9e59dbe2a3d96db2
+      created: 1768652408018
+      modified: 1768734111800
+      sortKey: -1768652408018
+      description: ""
+    children:
+      - url: https://localhost:7272/api/v1/Reservations
+        name: CREATE NEW RESERVATION
+        meta:
+          id: req_585a2c4fe90544f7b85d293bbf0dbe7c
+          created: 1768652413346
+          modified: 1768737649528
+          isPrivate: false
+          description: ""
+          sortKey: -1768652413346
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "customerName": "Herbert C",
+              "customerEmail": "herbert.carvalho18@gmail.com",
+              "customerPhone": "79981293706",
+            	"reservationDate": "2026-01-25T01:24:24.459Z",
+              "numberOfGuests": 4,
+              "restaurantId": 1,
+              "specialRequests": null,
+              "requiresDeposit": true,
+              "depositAmount": 100
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/Reservations
+        name: SEARCH RESERVATION
+        meta:
+          id: req_71f9b629235f405eabfbb5b445717485
+          created: 1768664870360
+          modified: 1768737560020
+          isPrivate: false
+          description: ""
+          sortKey: -1764861293671
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "customerName": "Herbert C",
+              "customerEmail": "herbert.carvalho18@gmail.com",
+              "customerPhone": "79981293706",
+              "reservationDate": "2026-01-18T12:17:58.632Z",
+              "numberOfGuests":4,
+              "restaurantId": 1,
+              "specialRequests": null,
+              "requiresDeposit": true,
+              "depositAmount": 100
+            }
+        parameters:
+          - name: pagesize
+            value: "100"
+            description: ""
+          - name: status
+            value: "4"
+            description: ""
+            disabled: true
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/reservations/144/confirm
+        name: CONFIRM RESERVATION
+        meta:
+          id: req_6a2124eaf2c14cc4b7676bdb59bf4400
+          created: 1768667292554
+          modified: 1768734225958
+          isPrivate: false
+          description: ""
+          sortKey: -1762965733833.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "confirmedBy": "string",
+              "notes": "string"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/webhooks/payment
+        name: "WEBHOOK - CONFIRM RESERVATION "
+        meta:
+          id: req_0b27112d66714f35a4c63af5a0beee86
+          created: 1768668280637
+          modified: 1768737748611
+          isPrivate: false
+          description: ""
+          sortKey: -1762017953914.75
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "transactionId": "5",
+              "reservationCode": "7015da78-0910-440b-89f8-0a6c51c8157a",
+              "amount": 95,
+              "paidAt": "2026-01-17T16:44:43.631Z",
+              "status": "APPROVED"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+          - name: X-Signature
+            value: "123"
+            description: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/reservations/43/check-in
+        name: CHECK-IN RESERVATION
+        meta:
+          id: req_bfdc9a1189b84b02b2afea534efd2372
+          created: 1768671464209
+          modified: 1768737630972
+          isPrivate: false
+          description: ""
+          sortKey: -1762491843874.125
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |2-
+             {
+              "checkInTime": "2025-01-20T19:55:00Z",
+              "notes": "Cliente chegou 5 min antes"
+             }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/dashboard/metrics
+        name: DASHBOARD METRICS
+        meta:
+          id: req_bc6667075d3c42bd8470011af42b4da6
+          created: 1768687338516
+          modified: 1768703832249
+          isPrivate: false
+          description: ""
+          sortKey: -1762017953814.75
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "customerName": "Herbert C",
+              "customerEmail": "herbert.carvalho18@gmail.com",
+              "customerPhone": "79981293706",
+              "reservationDate": "2026-01-18T12:17:58.632Z",
+              "numberOfGuests":4,
+              "restaurantId": 1,
+              "specialRequests": null,
+              "requiresDeposit": true,
+              "depositAmount": 100
+            }
+        parameters:
+          - name: pagesize
+            value: "100"
+            description: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+          - name: X-Restaurant-Id
+            value: "1"
+            description: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/auth/login
+        name: LOGIN
+        meta:
+          id: req_654eac1f4d554416ac7db0144aa19526
+          created: 1768690610183
+          modified: 1768736053925
+          isPrivate: false
+          description: ""
+          sortKey: -1768652413446
+        method: POST
+        body:
+          mimeType: application/json
+          text: |2-
+             {
+             "email": "admin@restaurant.com",
+             "password": "Admin123!"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        authentication:
+          type: bearer
+          disabled: true
+          token: "{{ _.authorizationRestaurant }}"
+        scripts:
+          afterResponse: >
+            const jsonBody = insomnia.response.json();
+
+            console.log(jsonBody);
+
+            insomnia.environment.set("authorizationRestaurant",
+            jsonBody.data.accessToken);
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/auth/refresh
+        name: Refresh
+        meta:
+          id: req_c86cc26ad1164a6bbf93d723e88c27ba
+          created: 1768695580468
+          modified: 1768703812915
+          isPrivate: false
+          description: ""
+          sortKey: -1765809073589.75
+        method: POST
+        body:
+          mimeType: application/json
+          text: |2-
+             {
+             "refreshToken": "f73fc466-079a-4690-8685-83b72c34cfb8"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        authentication:
+          type: none
+        scripts:
+          afterResponse: >
+            const jsonBody = insomnia.response.json();
+
+            console.log(jsonBody);
+
+            insomnia.environment.set("authorizationRestaurant",
+            jsonBody.data.accessToken);
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/reservations/144/COMPLETE
+        name: COMPLETE RESERVATION
+        meta:
+          id: req_a7abb5ee4bff4c9792b85b5cf5922991
+          created: 1768733937583
+          modified: 1768734259741
+          isPrivate: false
+          description: ""
+          sortKey: -1762728788853.8125
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "confirmedBy": "string",
+              "notes": "string"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/reservations/144/review
+        name: REVIEW RESERVATION
+        meta:
+          id: req_6d34e43efc7f4cdabe3cb122dabd7743
+          created: 1768735769807
+          modified: 1768736433081
+          isPrivate: false
+          description: ""
+          sortKey: -1762847261343.6562
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "rating": 5,
+              "comment": "ola mundo321",
+            	"category": "SERVICE"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:7272/api/v1/reservations/147/cancel
+        name: CANCEL RESERVATION
+        meta:
+          id: req_b7c3202446cb493eaf6cf7a275e8681b
+          created: 1768736728894
+          modified: 1768737734479
+          isPrivate: false
+          description: ""
+          sortKey: -1762610316363.9688
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "Reason": "string",
+              "CancelledBy": "string"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/2023.5.8
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    authentication:
+      type: bearer
+      token: "{{ _.authorizationRestaurant }}"
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_1aee617901325b51bba979a73cc31c862d400aa6
+    created: 1720920404139
+    modified: 1768734111793
+  cookies:
+    - id: 35101ce8-6b8a-444f-9650-9b550da72338
+      key: .AspNetCore.Identity.Application
+      value: CfDJ8NArPEl3byRBl-MdJmcHxiOEtyswDyRT1IU3EHWZbw6Imc1msdRK3O50lPiFRrKXDM8o_V--DOd2qj-1NqknUlitO4D_UXT4-ThvdJx0daoKqY4GSvnm5sOKhSoD_L_FPSmfUzak_BVGUoH3Bkv1Ex64g9cDsh7LnZeeOilMjQbBvan86aPx6GRf_o-xeK0HeeEq9T_ESqXYGXiWPMhsT_O-na-8yb7BAyfb3yrECCMs3m5bKLEwCAeBtqSZrciFr205rYwasl5M6NctjgLsLnyusahmjVOX8g4EV3Z_1yxoMSSZ3LUVBQnAV1AdX1O9ZD_8ERKq573T8d4lcoD6Enb9fEbprht2NvK8e9bFBRC_iMeX9Xi6F2Bau1-kKWlX9Wju5JkFO7W02aW_LvBcfZ0jyz9SG709uJPPBEnsDC4vL0STcxjOnQBXsm6vcjt5XsxoZG0WM2zaOIshlJ27bvV4r8Qfe0brdUmD9GqltqMHM68YLV8E_l8rs17I0uQPM7EgVQRDb1eHImEnA_2Ls76ggXmGubr7DrUSIi1n8AB7vGWhzVjgkKEUcK1u2ToQ05eX7ps0WUGV6nt1o76qMpTmnPUdMY-QIMIOCP4-qDNCgsC-A9qbIKQYdUsf9G_9vOJ7vIg29DA6MqW9-14df3KwLfuaDvajzrHAFXL5VvoYoIYPXIx1JEZIl39nZfqBbmWc9nmRTacHDZIL5AvUoY2YMRsfSG37Hvy-pyU8NJG5FCjgdjsGzOaAhWpkUNTX26YyhEeeRuyHphaFQxHCr23N81F6S3uyQrcbsewe3t8y
+      domain: localhost
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 5a51c73b-5430-4e55-9613-6d3d364334b8
+      key: .AspNetCore.Identity.Application
+      value: CfDJ8DP4wiKiJFlGk7ms0MVhvfUOQfQBxsq_AQqPekQ4eyetg0AHh0TuFCHV2Y_XFft8Q26opJO6OjVaRBJaDwJoUf1dnA2OcKHh9MAx_ogGier3HZexAbr_6CMrwOhsAyNLlCXq94gVZrpsrRBw0aruJNpNOTBnIhCi2zeXc7voW_vSLtaA1xS0IwcDlsVtEHB_MEyU5sBfHNiwObazo4cO6Praw9W4rmH-nrOT3-WJV2Ocrxv30Afxiu0aYAVFMczLDLA8bl-zl-DceKf4mrZ34jo6x0z-vYKhgaM7QP72OjhaQASvCs5S1ROefvTrdqkHv8j_25RQ8OBOfVyhgBb2del6c4q3S1VdFYKXOjaah_m41DFG2EaX30LELq3nD016zbarQOuD5j4RKP75VKMUxXjStM25CSYAN7FqvkHSOvNcBP1gFa1-Q1rrjbdlD2kDzf9OYvg3-nEicv44gBD3eGWu5Zkbp4g7xGPSoB9EaMJvsg9-Ei8nJl8xsMbdJ0XdWmnNj-Z2hVCkPiO3qWWYUFP5rQcr__mVLWgIS2-NrXWpa457GibqwgD5tLsubF7GS3kkXzC4Hnr5FQCUSHXeLCQreZyg7lH6e6tza0Nv_gZnfEGvvdjUyPspVaz6FH-3fN5sor9Y_01t4VPRuEKWjjrh6QO3K2ASlCqs8liRrBH2IXvRp7NI3xZxJlAqmL9mqra5BQEYZJdgfNThQCXN4k5h7_zW_124JNr6RXwPPmtJJBEb-_7PxuFav4JaG-6VF3jhzldphdZTAjjxvWSOf13K70drntOjTEWmUC-nIUY6tqrAs5FjQ4OX7vNnV3hxmO1fj8Px5VL_psVlYdQgiamXjMyFx77FT7dLWaRM-K2G2VvwyO1VEuR-UUI0xqbEeA
+      domain: 104.41.7.13
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+    - id: 39f23d6b-ab76-44da-a447-530437e97d1f
+      key: buid
+      value: 1.AWMBwowzzHlLs0CnLvAv1CLUh-RS2BWYQfZNjxqxNKAGe5pjAQBjAQ.AQABGgEAAADW6jl31mB3T7ugrWTT8pFeB1t39sxemtm-aF299ME5ErMNDWJ6QEl7lzcLsOX7sZpgUw7jrbzJJPS_mdg06F6A_yTVGh6Xhms1Ug3rahc9z9PesG9n1vOTTgCU-FJ6HrUgAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: f16d09c8-c4cc-472b-ac1b-dc3258615f27
+      key: esctx
+      value: PAQABBwEAAADW6jl31mB3T7ugrWTT8pFe5HOUo9h-heabZSE9j_HVFID7rtwHanhOPwwZOGLMWsodd6As5zBxccW9kZFMTyid_a59ILLU_5AsLpujOy7O6HPxGROEqDcqY61A72FJeKChmHl3_dqJXByBQc_PvPVuuGwCaI_-Jl-wU2xItmDhTdhzvk4w1HAV6gSKzTTlwbAgAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+    - id: 2b42cc6c-e1b2-4e35-a6db-f64d8e5e8eb0
+      key: esctx-7NuzSuWBDfc
+      value: AQABCQEAAADW6jl31mB3T7ugrWTT8pFeWq4_l4bfcUVhFRRP1lyF3CVmrZNg_KVrAcHj6ra7Lk_sHQMpue6Re2bEMehPk8lndMWHhgLwWlUqTNC0eP063qiJgKRrfcE1BIHGlEjDKuh3bCUEPrxf4PlWAMXq0ZT1zwH8SinYNGpcV0JpuY9R5yAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+    - id: 3aaa8dc6-c37f-4a3c-a22c-71c8db208bfb
+      key: fpc
+      value: AouQgWCxM0dEs7rV1IX4NSLQv_1_AwAAAHw41d4OAAAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: b14664e9-5838-478a-b801-b6cf6b14c16e
+      key: x-ms-gateway-slice
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: a34c0db1-16d8-4048-a248-ea8cc6894aae
+      key: stsservicecookie
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 630ea9e4-9733-41dd-9c4e-9c6ed8a3e7bd
+      key: esctx-9FRuMEuPWpo
+      value: AQABCQEAAADW6jl31mB3T7ugrWTT8pFeK_eHRhKu3IVnH2L9nED2tvK_cfm2lNf93r6tk69vWWy8lgLJMARHmqZhQCVgB38GxWbqiuz69i4sBplJzn7_uwf7cB154z2mzKR-2DPcp1xMeJgr68OakpkOIkQwAv6zGt18661YEuDGnHiR_BFbTSAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+    - id: 0a8f5077-2677-4b46-aafa-0dda44a9eb61
+      key: esctx-i4vK2GWq81o
+      value: AQABCQEAAADW6jl31mB3T7ugrWTT8pFeU_kDh_iAtuMGkge-pfMdC6PbDkY72zseuQeS69yOe7k93Tb14rpe0mo-kwHsj2IRY2h16CMlxiOUvUMbk6AKY8XsDdcpJbLquOIBkeE93_jCf6kpLubk94BVmqGApS338R4SPX5WKZcfGiQiqBnVeiAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+    - id: 74c7fab6-7d71-4d1b-9a88-0a4fd7f4ba5a
+      key: .AspNetCore.Identity.Application
+      value: CfDJ8NArPEl3byRBl-MdJmcHxiO22PqCUgTau4pdqC_98HE5MlXgR8ScFo1rty6uuyjnuVwBGIRa25221gA9L41VaIBpLSgBlKbahpwpFpHZVyno1pVCw_jnCC6Y7jYyLgrUdViQgYHtO9nqcG-ZPtrxGHD-E8I7OHCnUb1ZCV5O_QjyuF3MEUV5qO0U6yPWpyZWJ32oQpajFH68naFb9muBsxoRN2So_yZpTjS92yGz-1kZ_5KXBTM7XlcV_-GGa4SBKznX5BsE1X28o9NTQUu9XJa6RGPlYO0-o3_3zSFYBP6lWYoKejozcPGB_KaekUkcN4B66fjO93LfPKHq8yemGF9EVXuDMkV4E61CiKkZXmxpduO4yEeIDvlVICeIPJ8tGcgmaBLg63GuMKoC0jfGjrMXkrxz9xaApLtcNeuOJ3_JDrIm12h4BR0WpT4wM_Ab41yRvDqEXYKEOlbDTwVkHI4I0Kk6dg-3GiOJdUMbgGhTBsFar9bc95znJlykJVzRmSjboNMbkMTEKF1yXDcr6LisCOUgcWOccO12jBVc9ZOstE7zT-k6_fyqaesiKS0WSAimOg1owBgl0Wj3o045t12ZnVPTe56XgMxAbZayy3e117H9nfyic6i2j1WKNccV0qlx7e1cpCH-_4fFN52qGUvD08rvpqfYGJGah70kHzoe5dvyFYUyNIooPGuM4t_mtM3jkNWZkUHBOuvoF6PhmzEbfCCbsg_qQuPMJmgkCJE19XTr8wKrOxYOleo6n_HawCeu2BuLFSaZThVE2qUgfBsUwSGSGALa2kf16zOeSvSM
+      domain: localhost
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 1ab3eb9a-12ae-44ae-919b-0c56409176ef
+      key: .AspNetCore.Identity.Application
+      value: CfDJ8DP4wiKiJFlGk7ms0MVhvfUOQfQBxsq_AQqPekQ4eyetg0AHh0TuFCHV2Y_XFft8Q26opJO6OjVaRBJaDwJoUf1dnA2OcKHh9MAx_ogGier3HZexAbr_6CMrwOhsAyNLlCXq94gVZrpsrRBw0aruJNpNOTBnIhCi2zeXc7voW_vSLtaA1xS0IwcDlsVtEHB_MEyU5sBfHNiwObazo4cO6Praw9W4rmH-nrOT3-WJV2Ocrxv30Afxiu0aYAVFMczLDLA8bl-zl-DceKf4mrZ34jo6x0z-vYKhgaM7QP72OjhaQASvCs5S1ROefvTrdqkHv8j_25RQ8OBOfVyhgBb2del6c4q3S1VdFYKXOjaah_m41DFG2EaX30LELq3nD016zbarQOuD5j4RKP75VKMUxXjStM25CSYAN7FqvkHSOvNcBP1gFa1-Q1rrjbdlD2kDzf9OYvg3-nEicv44gBD3eGWu5Zkbp4g7xGPSoB9EaMJvsg9-Ei8nJl8xsMbdJ0XdWmnNj-Z2hVCkPiO3qWWYUFP5rQcr__mVLWgIS2-NrXWpa457GibqwgD5tLsubF7GS3kkXzC4Hnr5FQCUSHXeLCQreZyg7lH6e6tza0Nv_gZnfEGvvdjUyPspVaz6FH-3fN5sor9Y_01t4VPRuEKWjjrh6QO3K2ASlCqs8liRrBH2IXvRp7NI3xZxJlAqmL9mqra5BQEYZJdgfNThQCXN4k5h7_zW_124JNr6RXwPPmtJJBEb-_7PxuFav4JaG-6VF3jhzldphdZTAjjxvWSOf13K70drntOjTEWmUC-nIUY6tqrAs5FjQ4OX7vNnV3hxmO1fj8Px5VL_psVlYdQgiamXjMyFx77FT7dLWaRM-K2G2VvwyO1VEuR-UUI0xqbEeA
+      domain: 104.41.7.13
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+    - id: a502b003-2d5a-42c7-b13d-4c5884f41c0b
+      key: buid
+      value: 1.AWMBwowzzHlLs0CnLvAv1CLUh-RS2BWYQfZNjxqxNKAGe5pjAQBjAQ.AQABGgEAAADW6jl31mB3T7ugrWTT8pFeB1t39sxemtm-aF299ME5ErMNDWJ6QEl7lzcLsOX7sZpgUw7jrbzJJPS_mdg06F6A_yTVGh6Xhms1Ug3rahc9z9PesG9n1vOTTgCU-FJ6HrUgAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: a08f0da9-a36d-447a-8fc6-017b25d97a1b
+      key: esctx
+      value: PAQABBwEAAADW6jl31mB3T7ugrWTT8pFe5HOUo9h-heabZSE9j_HVFID7rtwHanhOPwwZOGLMWsodd6As5zBxccW9kZFMTyid_a59ILLU_5AsLpujOy7O6HPxGROEqDcqY61A72FJeKChmHl3_dqJXByBQc_PvPVuuGwCaI_-Jl-wU2xItmDhTdhzvk4w1HAV6gSKzTTlwbAgAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+    - id: 01ea3771-e810-4220-a275-a4f88040b218
+      key: esctx-7NuzSuWBDfc
+      value: AQABCQEAAADW6jl31mB3T7ugrWTT8pFeWq4_l4bfcUVhFRRP1lyF3CVmrZNg_KVrAcHj6ra7Lk_sHQMpue6Re2bEMehPk8lndMWHhgLwWlUqTNC0eP063qiJgKRrfcE1BIHGlEjDKuh3bCUEPrxf4PlWAMXq0ZT1zwH8SinYNGpcV0JpuY9R5yAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+    - id: 23213923-8598-4d52-89d1-ec96a3d8ec71
+      key: fpc
+      value: AouQgWCxM0dEs7rV1IX4NSLQv_1_AwAAAHw41d4OAAAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 08cb1263-9e03-4868-8708-f35783c2af4b
+      key: x-ms-gateway-slice
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: 8374642e-c3ca-4dd4-a868-15b61833449c
+      key: stsservicecookie
+      value: estsfd
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+    - id: d72548cd-bcde-4fdb-9adb-b88457ce51b7
+      key: esctx-9FRuMEuPWpo
+      value: AQABCQEAAADW6jl31mB3T7ugrWTT8pFeK_eHRhKu3IVnH2L9nED2tvK_cfm2lNf93r6tk69vWWy8lgLJMARHmqZhQCVgB38GxWbqiuz69i4sBplJzn7_uwf7cB154z2mzKR-2DPcp1xMeJgr68OakpkOIkQwAv6zGt18661YEuDGnHiR_BFbTSAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+    - id: 5eb9d2d7-0276-45a7-9255-5e1c88019187
+      key: esctx-i4vK2GWq81o
+      value: AQABCQEAAADW6jl31mB3T7ugrWTT8pFeU_kDh_iAtuMGkge-pfMdC6PbDkY72zseuQeS69yOe7k93Tb14rpe0mo-kwHsj2IRY2h16CMlxiOUvUMbk6AKY8XsDdcpJbLquOIBkeE93_jCf6kpLubk94BVmqGApS338R4SPX5WKZcfGiQiqBnVeiAA
+      domain: login.microsoftonline.com
+      path: /
+      secure: true
+      httpOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_1aee617901325b51bba979a73cc31c862d400aa6
+    created: 1720920404137
+    modified: 1768734111799
+    isPrivate: false
+  data:
+    base_url: https://localhost:7206
+    authorization: "{% response 'body', 'req_30eb2256d5e64d19ba585f530683f742',
+      'b64::JC5kYXRhLnRva2Vu::46b', 'never', 60 %}"
+    authorizationRestaurant: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Njg3Mzc3MTAsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.7O2Dl3gJCe0qGFrSDsLqWTW2Xtgtv23MAAqyq9w920Y
+  subEnvironments:
+    - name: OpenAPI env example.com
+      meta:
+        id: env_724485f566924d1d96756071e7875b4a
+        created: 1720920416015
+        modified: 1720920416015
+        isPrivate: false
+        sortKey: 1720920416015
+      data:
+        scheme: http
+        base_path: ""
+        host: example.com
+        authorization: authorization
