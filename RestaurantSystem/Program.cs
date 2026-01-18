@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.addSerilog();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddPersistenceContexts(builder.Configuration);
@@ -25,7 +26,6 @@ builder.Services.AddServices();
 builder.Services.AddCommands();
 builder.Services.AddQueries();
 builder.Services.AddHealthChecks().AddDbContextCheck<ApplicationDbContext>();
-
 builder.Services.AddScoped<CommandDispatcher>();
 builder.Services.AddScoped<QueryDispatcher>();
 builder.Services.AddScoped<DomainEventPublisher>();

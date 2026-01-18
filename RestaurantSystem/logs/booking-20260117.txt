@@ -1,0 +1,1056 @@
+2026-01-17 22:11:09.509 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:11:09.875 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:11:09.950 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:11:10.051 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:11:10.059 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:11:10.061 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:11:10.064 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:11:10.069 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:11:10.097 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:11:10.342 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:11:10.383 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:11:10.424 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:11:10.445 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:11:10.953 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:11:10.955 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:11:11.001 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:11:11.002 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:11:11.003 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:11:11.004 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:11:11.005 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:11:11.006 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:11:11.025 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:11:11.032 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:11:11.033 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:11:11.051 -03:00 [INF] Server desktop-t1oitsg:26660:e18faefd successfully announced in 18.2325 ms
+2026-01-17 22:11:11.056 -03:00 [INF] Server desktop-t1oitsg:26660:e18faefd is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:11:11.235 -03:00 [INF] Server desktop-t1oitsg:26660:e18faefd all the dispatchers started
+2026-01-17 22:11:37.226 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:11:37.400 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:11:37.418 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:11:37.477 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:11:37.598 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:11:37.621 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:11:37.629 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:11:37.638 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:11:37.652 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:11:37.656 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:11:37.672 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:11:37.778 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p4='14', @p0='2026-01-18T01:08:59.7348750Z' (DbType = DateTime), @p1='2026-01-25T01:08:59.7349220Z' (DbType = DateTime), @p2='True', @p3='e61ee4d6-080b-49c7-9170-afa6188219d7' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:11:37.813 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='2026-01-18T01:11:37.7910029Z' (DbType = DateTime), @p1='2026-01-25T01:11:37.7910539Z' (DbType = DateTime), @p2='False', @p3='17148ef3-0b1f-4524-b215-c8425f5eb81c' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:11:37.838 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:11:37.852 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 429.004ms
+2026-01-17 22:11:37.854 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:11:37.861 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 639.5624ms
+2026-01-17 22:13:31.819 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:13:32.197 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:13:32.255 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:13:32.335 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:13:32.343 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:13:32.345 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:13:32.348 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:13:32.353 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:13:32.379 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:13:32.643 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:13:32.691 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:13:32.737 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:13:32.765 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:13:33.278 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:13:33.278 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:13:33.319 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:13:33.320 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:13:33.321 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:13:33.322 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:13:33.323 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:13:33.324 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:13:33.342 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:13:33.347 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:13:33.348 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:13:33.366 -03:00 [INF] Server desktop-t1oitsg:31280:d26b3215 successfully announced in 17.4033 ms
+2026-01-17 22:13:33.372 -03:00 [INF] Server desktop-t1oitsg:31280:d26b3215 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:13:33.544 -03:00 [INF] Server desktop-t1oitsg:31280:d26b3215 all the dispatchers started
+2026-01-17 22:13:36.603 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:13:36.751 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:13:36.768 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:13:36.825 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:13:36.958 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:13:36.981 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:13:36.989 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:13:36.998 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:13:37.015 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:13:37.020 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:13:37.037 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:13:37.142 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p4='15', @p0='2026-01-18T01:11:37.7910020Z' (DbType = DateTime), @p1='2026-01-25T01:11:37.7910530Z' (DbType = DateTime), @p2='True', @p3='17148ef3-0b1f-4524-b215-c8425f5eb81c' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:13:37.184 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='2026-01-18T01:13:37.1584692Z' (DbType = DateTime), @p1='2026-01-25T01:13:37.1585433Z' (DbType = DateTime), @p2='False', @p3='eeb8f22c-e914-477d-a822-8fc895b3d16f' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:13:37.213 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:13:37.226 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 453.6402ms
+2026-01-17 22:13:37.229 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:13:37.236 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 636.7068ms
+2026-01-17 22:13:49.247 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:13:49.258 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:13:49.265 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:13:49.403 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 137.3997ms
+2026-01-17 22:13:49.405 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:13:49.418 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:13:49.422 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 174.3911ms
+2026-01-17 22:14:41.248 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:14:41.255 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:14:41.257 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:14:41.328 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 68.5058ms
+2026-01-17 22:14:41.330 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:14:51.110 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:14:52.734 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 11485.5329ms
+2026-01-17 22:18:33.440 -03:00 [INF] 2 servers were removed due to timeout
+2026-01-17 22:18:48.247 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:18:48.604 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:18:48.664 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:18:48.749 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:18:48.757 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:18:48.760 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:18:48.763 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:18:48.768 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:18:48.794 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:18:49.047 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:18:49.094 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:18:49.138 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:18:49.167 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:18:49.682 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:18:49.684 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:18:49.723 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:18:49.724 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:18:49.725 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:18:49.725 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:18:49.726 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:18:49.727 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:18:49.749 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:18:49.750 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:18:49.751 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:18:49.768 -03:00 [INF] Server desktop-t1oitsg:32928:4bc22974 successfully announced in 18.0885 ms
+2026-01-17 22:18:49.774 -03:00 [INF] Server desktop-t1oitsg:32928:4bc22974 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:18:50.011 -03:00 [INF] Server desktop-t1oitsg:32928:4bc22974 all the dispatchers started
+2026-01-17 22:19:20.094 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:19:20.448 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:19:20.506 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:19:20.587 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:19:20.595 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:19:20.597 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:19:20.600 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:19:20.604 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:19:20.630 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:19:20.871 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:19:20.914 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:19:20.958 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:19:20.981 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:19:21.530 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:19:21.531 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:19:21.567 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:19:21.568 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:19:21.570 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:19:21.571 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:19:21.572 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:19:21.572 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:19:21.592 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:19:21.594 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:19:21.620 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:19:21.632 -03:00 [INF] Server desktop-t1oitsg:2260:4da129ab successfully announced in 37.3537 ms
+2026-01-17 22:19:21.637 -03:00 [INF] Server desktop-t1oitsg:2260:4da129ab is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:19:21.867 -03:00 [INF] Server desktop-t1oitsg:2260:4da129ab all the dispatchers started
+2026-01-17 22:20:14.162 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:20:14.531 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:20:14.588 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:20:14.673 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:20:14.681 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:20:14.684 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:20:14.687 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:20:14.692 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:20:14.717 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:20:14.959 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:15.002 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:15.043 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:20:15.066 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:20:15.543 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:20:15.544 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:20:15.584 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:20:15.585 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:20:15.586 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:20:15.587 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:20:15.588 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:20:15.589 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:20:15.606 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:20:15.612 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:20:15.613 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:20:15.630 -03:00 [INF] Server desktop-t1oitsg:32844:073efa9b successfully announced in 18.1735 ms
+2026-01-17 22:20:15.636 -03:00 [INF] Server desktop-t1oitsg:32844:073efa9b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:20:15.873 -03:00 [INF] Server desktop-t1oitsg:32844:073efa9b all the dispatchers started
+2026-01-17 22:20:27.689 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:27.826 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:27.845 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:27.904 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:28.035 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:28.059 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:28.067 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:28.076 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:28.092 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:28.097 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:28.113 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:28.210 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p4='16', @p0='2026-01-18T01:13:37.1584690Z' (DbType = DateTime), @p1='2026-01-25T01:13:37.1585430Z' (DbType = DateTime), @p2='True', @p3='eeb8f22c-e914-477d-a822-8fc895b3d16f' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:28.244 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='2026-01-18T01:20:28.2228831Z' (DbType = DateTime), @p1='2026-01-25T01:20:28.2229287Z' (DbType = DateTime), @p2='False', @p3='ce60a0c0-6b56-434b-a62e-2e2bb309bd2f' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:28.269 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:28.280 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 430.8355ms
+2026-01-17 22:20:28.282 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:28.287 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 602.1303ms
+2026-01-17 22:20:29.122 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:29.128 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:29.129 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:29.192 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:29.260 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:29.264 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:29.268 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:29.272 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:29.276 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:29.279 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:29.282 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:29.288 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='17', @p0='2026-01-18T01:20:28.2228830Z' (DbType = DateTime), @p1='2026-01-25T01:20:28.2229280Z' (DbType = DateTime), @p2='True', @p3='ce60a0c0-6b56-434b-a62e-2e2bb309bd2f' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:29.293 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:20:29.2903151Z' (DbType = DateTime), @p1='2026-01-25T01:20:29.2903208Z' (DbType = DateTime), @p2='False', @p3='c347bc1b-1213-4410-a334-3377344af3a3' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:29.296 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:29.297 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 165.7362ms
+2026-01-17 22:20:29.299 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:29.300 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 178.3113ms
+2026-01-17 22:20:29.889 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:29.893 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:29.895 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:29.913 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:29.986 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:29.991 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:29.995 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:29.998 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:30.002 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:30.005 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:30.008 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:30.013 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='18', @p0='2026-01-18T01:20:29.2903150Z' (DbType = DateTime), @p1='2026-01-25T01:20:29.2903200Z' (DbType = DateTime), @p2='True', @p3='c347bc1b-1213-4410-a334-3377344af3a3' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:30.017 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:20:30.0155664Z' (DbType = DateTime), @p1='2026-01-25T01:20:30.0155710Z' (DbType = DateTime), @p2='False', @p3='fea1eaad-68d8-4c28-8473-a386c6c66980' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:30.020 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:30.021 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 124.1601ms
+2026-01-17 22:20:30.023 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:30.024 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 135.178ms
+2026-01-17 22:20:30.551 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:30.555 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:30.556 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:30.563 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:30.634 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:30.639 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:30.643 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:30.648 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:30.651 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:30.655 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:30.659 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:30.665 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='19', @p0='2026-01-18T01:20:30.0155660Z' (DbType = DateTime), @p1='2026-01-25T01:20:30.0155710Z' (DbType = DateTime), @p2='True', @p3='fea1eaad-68d8-4c28-8473-a386c6c66980' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:30.671 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='2026-01-18T01:20:30.6678086Z' (DbType = DateTime), @p1='2026-01-25T01:20:30.6678132Z' (DbType = DateTime), @p2='False', @p3='091277d1-aece-40a4-9867-7cfad2789660' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:30.674 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:30.676 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 116.9187ms
+2026-01-17 22:20:30.679 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:30.680 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 129.5852ms
+2026-01-17 22:20:38.867 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:38.880 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:38.881 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:38.887 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:38.965 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:38.969 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:38.974 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:38.978 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:38.980 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:38.983 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:38.987 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:38.993 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p4='20', @p0='2026-01-18T01:20:30.6678080Z' (DbType = DateTime), @p1='2026-01-25T01:20:30.6678130Z' (DbType = DateTime), @p2='True', @p3='091277d1-aece-40a4-9867-7cfad2789660' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:39.000 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='2026-01-18T01:20:38.9952026Z' (DbType = DateTime), @p1='2026-01-25T01:20:38.9952090Z' (DbType = DateTime), @p2='False', @p3='e5ff07e9-bc88-4f9a-9a83-4cfbe204ece6' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:39.003 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:39.005 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 122.3307ms
+2026-01-17 22:20:39.007 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:39.008 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 140.913ms
+2026-01-17 22:20:39.994 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:39.996 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:39.997 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:40.002 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:40.069 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:40.072 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:40.076 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:40.080 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:40.082 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:40.085 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:40.088 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:40.092 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='21', @p0='2026-01-18T01:20:38.9952020Z' (DbType = DateTime), @p1='2026-01-25T01:20:38.9952090Z' (DbType = DateTime), @p2='True', @p3='e5ff07e9-bc88-4f9a-9a83-4cfbe204ece6' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:40.096 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:20:40.0943425Z' (DbType = DateTime), @p1='2026-01-25T01:20:40.0943463Z' (DbType = DateTime), @p2='False', @p3='f2cc602d-37b2-46ef-af62-8cb70e8c90f3' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:40.098 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:40.099 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 100.527ms
+2026-01-17 22:20:40.101 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:40.101 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 108.0361ms
+2026-01-17 22:20:40.886 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:40.890 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:40.891 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:40.896 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:40.962 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:40.966 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:40.969 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:40.973 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:40.975 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:40.978 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:40.981 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:40.986 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='22', @p0='2026-01-18T01:20:40.0943420Z' (DbType = DateTime), @p1='2026-01-25T01:20:40.0943460Z' (DbType = DateTime), @p2='True', @p3='f2cc602d-37b2-46ef-af62-8cb70e8c90f3' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:40.990 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:20:40.9884538Z' (DbType = DateTime), @p1='2026-01-25T01:20:40.9884579Z' (DbType = DateTime), @p2='False', @p3='d8072d86-922a-481a-90f3-b6d575f42115' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:40.992 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:40.993 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 100.9752ms
+2026-01-17 22:20:40.995 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:40.995 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 109.1639ms
+2026-01-17 22:20:41.756 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:41.758 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:41.759 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:41.764 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:41.828 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:41.832 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:41.835 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:41.839 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:41.841 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:41.843 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:41.846 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:41.851 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='23', @p0='2026-01-18T01:20:40.9884530Z' (DbType = DateTime), @p1='2026-01-25T01:20:40.9884570Z' (DbType = DateTime), @p2='True', @p3='d8072d86-922a-481a-90f3-b6d575f42115' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:41.855 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:20:41.8529494Z' (DbType = DateTime), @p1='2026-01-25T01:20:41.8529531Z' (DbType = DateTime), @p2='False', @p3='a88c2b58-5440-4cfb-876f-2c3c72b556da' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:41.857 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:41.859 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 98.6019ms
+2026-01-17 22:20:41.860 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:41.862 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 105.5816ms
+2026-01-17 22:20:42.473 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:42.476 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:42.477 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:42.483 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:42.552 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:42.558 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:42.562 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:42.566 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:42.569 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:42.572 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:42.576 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:42.581 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='24', @p0='2026-01-18T01:20:41.8529490Z' (DbType = DateTime), @p1='2026-01-25T01:20:41.8529530Z' (DbType = DateTime), @p2='True', @p3='a88c2b58-5440-4cfb-876f-2c3c72b556da' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:42.586 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:20:42.5837884Z' (DbType = DateTime), @p1='2026-01-25T01:20:42.5837938Z' (DbType = DateTime), @p2='False', @p3='29bebf9a-6cfe-4cc9-8605-61f388040227' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:42.588 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:42.590 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 110.361ms
+2026-01-17 22:20:42.591 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:42.592 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 119.0536ms
+2026-01-17 22:20:43.212 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:20:43.215 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:43.217 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:20:43.222 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:20:43.292 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:20:43.296 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:20:43.299 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:20:43.302 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:20:43.304 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:20:43.307 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:20:43.310 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:20:43.314 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='25', @p0='2026-01-18T01:20:42.5837880Z' (DbType = DateTime), @p1='2026-01-25T01:20:42.5837930Z' (DbType = DateTime), @p2='True', @p3='29bebf9a-6cfe-4cc9-8605-61f388040227' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:20:43.319 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:20:43.3168346Z' (DbType = DateTime), @p1='2026-01-25T01:20:43.3168372Z' (DbType = DateTime), @p2='False', @p3='ca8b0ff2-65e3-4c6d-ac6b-808ffe247eea' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:20:43.321 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:20:43.322 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 103.2321ms
+2026-01-17 22:20:43.323 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:43.324 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 112.3991ms
+2026-01-17 22:20:47.757 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:20:47.765 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:47.772 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:20:47.927 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 153.1225ms
+2026-01-17 22:20:47.929 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:51.842 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:20:51.846 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 4088.7476ms
+2026-01-17 22:20:54.900 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:20:54.907 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:54.909 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:20:54.983 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 72.4949ms
+2026-01-17 22:20:54.985 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:20:57.948 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:20:57.950 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 3049.6896ms
+2026-01-17 22:21:00.645 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:21:00.648 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:00.649 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:21:00.708 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 57.1823ms
+2026-01-17 22:21:00.710 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:00.721 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:21:00.722 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 77.6073ms
+2026-01-17 22:21:01.418 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:21:01.421 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:01.422 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:21:01.480 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 55.9248ms
+2026-01-17 22:21:01.481 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:01.493 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:21:01.494 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 75.3777ms
+2026-01-17 22:21:02.176 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:21:02.179 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:02.180 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:21:02.237 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 55.5406ms
+2026-01-17 22:21:02.238 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:02.251 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:21:02.252 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 75.7101ms
+2026-01-17 22:21:02.676 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:21:02.678 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:02.679 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:21:02.738 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 57.4271ms
+2026-01-17 22:21:02.740 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:02.752 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:21:02.754 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 78.0602ms
+2026-01-17 22:21:03.203 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:21:03.205 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:03.206 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:21:03.271 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 62.9489ms
+2026-01-17 22:21:03.273 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:03.288 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:21:03.289 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 86.1846ms
+2026-01-17 22:21:42.815 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:21:43.163 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:21:43.221 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:21:43.301 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:21:43.308 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:21:43.310 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:21:43.314 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:21:43.318 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:21:43.344 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:21:43.579 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:21:43.618 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:21:43.657 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:21:43.682 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:21:44.173 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:21:44.174 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:21:44.211 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:21:44.212 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:21:44.213 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:21:44.213 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:21:44.214 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:21:44.215 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:21:44.232 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:21:44.237 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:21:44.238 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:21:44.256 -03:00 [INF] Server desktop-t1oitsg:29648:dd1a0ae7 successfully announced in 16.8644 ms
+2026-01-17 22:21:44.261 -03:00 [INF] Server desktop-t1oitsg:29648:dd1a0ae7 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:21:44.548 -03:00 [INF] Server desktop-t1oitsg:29648:dd1a0ae7 all the dispatchers started
+2026-01-17 22:21:50.840 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:21:51.054 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:51.071 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:21:51.249 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 173.1045ms
+2026-01-17 22:21:51.252 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:51.267 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:21:51.273 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 437.8323ms
+2026-01-17 22:21:54.143 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:21:54.148 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:54.149 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:21:54.212 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 60.645ms
+2026-01-17 22:21:54.213 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:21:54.227 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:21:54.228 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 84.9274ms
+2026-01-17 22:22:31.118 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:22:31.133 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:22:31.134 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:22:31.217 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 78.3037ms
+2026-01-17 22:22:31.220 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:22:31.235 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:22:31.236 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 118.3393ms
+2026-01-17 22:23:09.209 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:23:09.212 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:23:09.213 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:23:09.281 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 66.3047ms
+2026-01-17 22:23:09.282 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:23:09.296 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:23:09.296 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 87.7476ms
+2026-01-17 22:23:18.774 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:23:18.778 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:23:18.780 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:23:18.857 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 74.9171ms
+2026-01-17 22:23:18.859 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:23:18.877 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:23:18.878 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 103.3346ms
+2026-01-17 22:24:03.289 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:24:03.639 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:24:03.696 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:24:03.780 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:24:03.788 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:24:03.789 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:24:03.792 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:24:03.797 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:24:03.824 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:24:04.078 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:24:04.119 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:24:04.158 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:24:04.180 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:24:04.672 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:24:04.673 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:24:04.711 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:24:04.712 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:24:04.713 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:24:04.714 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:24:04.715 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:24:04.716 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:24:04.738 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:24:04.739 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:24:04.740 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:24:04.759 -03:00 [INF] Server desktop-t1oitsg:17636:3f174aed successfully announced in 18.989 ms
+2026-01-17 22:24:04.765 -03:00 [INF] Server desktop-t1oitsg:17636:3f174aed is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:24:04.827 -03:00 [INF] 2 servers were removed due to timeout
+2026-01-17 22:24:05.049 -03:00 [INF] Server desktop-t1oitsg:17636:3f174aed all the dispatchers started
+2026-01-17 22:24:11.083 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 196
+2026-01-17 22:24:11.251 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:24:11.272 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:24:11.471 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 193.8667ms
+2026-01-17 22:24:11.475 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:24:11.493 -03:00 [INF] ReservationDate: Reservation must be at least 2 hours in advance,NumberOfGuests: 'Number Of Guests' must be greater than '0'.,RestaurantId: The restaurant id needs to be valid
+2026-01-17 22:24:11.500 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 400 null application/json 421.2673ms
+2026-01-17 22:24:38.480 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/Reservations - application/json 288
+2026-01-17 22:24:38.486 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:24:38.488 -03:00 [INF] Route matched with {action = "CreateReservationCommand", controller = "Reservations", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservationCommand(Application.Commands.CreateReservation.CreateReservationCommand) on controller RestaurantSystem.Api.Controllers.ReservationsController (RestaurantSystem.Api).
+2026-01-17 22:24:38.518 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM restaurant AS r
+    WHERE r.id = @id)
+2026-01-17 22:24:38.535 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@email='herbert.carvalho18@gmail.com'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.created_at, c.email, c.name, c.phone
+FROM customer AS c
+WHERE c.email = @email
+LIMIT 1
+2026-01-17 22:24:38.693 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0=NULL (DbType = DateTime), @p1=NULL, @p2='2026-01-18T01:24:38.5388967Z' (DbType = DateTime), @p3='1', @p4='100' (Nullable = true), @p5=NULL (DbType = Decimal), @p6='df498fe5-4d9a-4698-aa1b-f7f0106ab0bb', @p7=NULL, @p8='4', @p9='True' (Nullable = true), @p10='2026-01-20T01:24:24.4590000Z' (DbType = DateTime), @p11='1', @p12=NULL, @p13='0', @p14=NULL], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO reservation (check_in_time, confirmed_by, created_at, customer_id, deposit_amount, deposit_amount_paid, guid, notes, number_of_guests, requires_deposit, reservation_date, restaurant_id, special_requests, status, transaction_id)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
+RETURNING id;
+2026-01-17 22:24:38.735 -03:00 [INF] Executing CreatedResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.CreateReservation.CreateReservationCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:24:38.742 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api) in 252.3028ms
+2026-01-17 22:24:38.744 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CreateReservationCommand (RestaurantSystem.Api)'
+2026-01-17 22:24:38.748 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/Reservations - 201 null application/json; charset=utf-8 267.902ms

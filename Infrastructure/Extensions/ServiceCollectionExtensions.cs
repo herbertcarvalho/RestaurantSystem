@@ -22,6 +22,7 @@ using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System.Text;
 using System.Threading.RateLimiting;
 
@@ -173,5 +174,20 @@ public static class ServiceCollectionExtensions
             options.ReportApiVersions = true;
             options.ApiVersionReader = new UrlSegmentApiVersionReader();
         });
+    }
+
+    public static void addSerilog(this WebApplicationBuilder webApplicationBuilder)
+    {
+        Log.Logger = new LoggerConfiguration()
+        .MinimumLevel.Information()
+        .Enrich.FromLogContext()
+        .WriteTo.Console()
+        .WriteTo.File("logs/booking-.txt", rollingInterval: RollingInterval.Day)
+        .WriteTo.Seq(webApplicationBuilder.Configuration.GetConnectionString("Seq"))
+        .CreateLogger();
+
+        webApplicationBuilder.Host.UseSerilog();
+
+        Serilog.Debugging.SelfLog.Enable(Console.Error);
     }
 }

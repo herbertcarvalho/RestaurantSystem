@@ -1,5 +1,6 @@
 ﻿using Domain.Common;
 using Domain.Exceptions;
+using Serilog;
 using System.Net;
 using System.Text.Json;
 
@@ -15,6 +16,7 @@ public class ErrorHandlerMiddleware(RequestDelegate next)
         }
         catch (Exception error)
         {
+
             var response = context.Response;
             response.ContentType = "application/json";
             var responseModel = ApiResponse<string>.Fail(error.Message);
@@ -38,6 +40,12 @@ public class ErrorHandlerMiddleware(RequestDelegate next)
                     responseModel.Message = "Sorry we cant process this now.";
                     break;
             }
+
+            if (response.StatusCode == 500)
+                Log.Error(error.Message);
+            else
+                Log.Information(error.Message);
+
             var result = JsonSerializer.Serialize(responseModel);
 
             await response.WriteAsync(result);
