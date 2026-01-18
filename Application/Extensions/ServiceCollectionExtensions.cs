@@ -1,6 +1,8 @@
 ﻿using Application.Commands.CheckInCustomer;
 using Application.Commands.ConfirmReservation;
 using Application.Commands.CreateReservation;
+using Application.Commands.Login;
+using Application.Commands.RefreshTkn;
 using Application.EventHandlers;
 using Application.Interfaces;
 using Application.Queries.GetAllReservationsPaged;
@@ -24,6 +26,10 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICommandHandler<ConfirmReservationWebhookCommand, ApiResponse<string>>, ConfirmReservationWebhookHandler>();
 
         services.AddScoped<ICommandWithIdHandler<CustomerCheckInCommand, ApiResponse<string>>, CustomerCheckInHandler>();
+
+        services.AddScoped<ICommandHandler<LoginCommand, ApiResponse<LoginCommandResponse>>, LoginHandler>();
+
+        services.AddScoped<ICommandHandler<RefreshTokenCommand, ApiResponse<LoginCommandResponse>>, RefreshTokenHandler>();
     }
 
     public static void AddQueries(this IServiceCollection services)

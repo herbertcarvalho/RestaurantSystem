@@ -5,11 +5,13 @@ using Application.Commands.CreateReservation;
 using Application.Interfaces;
 using Application.Queries.GetAllReservationsPaged;
 using Domain.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RestaurantSystem.Api.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 public class ReservationsController(CommandDispatcher commandDispatcher, QueryDispatcher queryDispatcher) : ControllerBase
 {

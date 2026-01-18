@@ -13,6 +13,6 @@ public class ApiResponse<T>
 
     public static new ApiResponse<T> Success(T data, string? message = "Action executed with success.")
     {
-        return new ApiResponse<T> { Data = data, Succeeded = false, Message = message! };
+        return new ApiResponse<T> { Data = data, Succeeded = true, Message = message! };
     }
 }

@@ -1,11 +1,13 @@
 using Application.Interfaces;
 using Application.Queries.GetDashboard;
 using Domain.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RestaurantSystem.Api.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 public class DashboardController(QueryDispatcher queryDispatcher) : ControllerBase
 {
