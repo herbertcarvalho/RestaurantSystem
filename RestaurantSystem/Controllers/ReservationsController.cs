@@ -1,8 +1,10 @@
 
+using Application.Commands.CancelReservation;
 using Application.Commands.CheckInCustomer;
 using Application.Commands.CompleteReservation;
 using Application.Commands.ConfirmReservation;
 using Application.Commands.CreateReservation;
+using Application.Commands.ReviewReservation;
 using Application.Interfaces;
 using Application.Queries.GetAllReservationsPaged;
 using Domain.Common;
@@ -48,6 +50,21 @@ public class ReservationsController(CommandDispatcher commandDispatcher, QueryDi
     public async Task<IActionResult> CompleteReservationCommand(int id, [FromBody] CompleteReservationCommand request)
     {
         var result = await commandDispatcher.DispatchAsync<CompleteReservationCommand, ApiResponse<string>>(id, request);
+        return Ok(result);
+    }
+
+    [HttpPost("{id}/review")]
+    public async Task<IActionResult> ReviewReservationCommand(int id, [FromBody] ReviewReservationCommand request)
+    {
+        var result = await commandDispatcher.DispatchAsync<ReviewReservationCommand, ApiResponse<string>>(id, request);
+        return Ok(result);
+    }
+
+
+    [HttpPut("{id}/cancel")]
+    public async Task<IActionResult> CancelReservationCommand(int id, [FromBody] CancelReservationCommand request)
+    {
+        var result = await commandDispatcher.DispatchAsync<CancelReservationCommand, ApiResponse<string>>(id, request);
         return Ok(result);
     }
 }

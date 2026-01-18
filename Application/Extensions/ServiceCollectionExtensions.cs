@@ -1,9 +1,11 @@
-﻿using Application.Commands.CheckInCustomer;
+﻿using Application.Commands.CancelReservation;
+using Application.Commands.CheckInCustomer;
 using Application.Commands.CompleteReservation;
 using Application.Commands.ConfirmReservation;
 using Application.Commands.CreateReservation;
 using Application.Commands.Login;
 using Application.Commands.RefreshTkn;
+using Application.Commands.ReviewReservation;
 using Application.EventHandlers;
 using Application.Interfaces;
 using Application.Queries.GetAllReservationsPaged;
@@ -33,6 +35,12 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICommandHandler<RefreshTokenCommand, ApiResponse<LoginCommandResponse>>, RefreshTokenHandler>();
 
         services.AddScoped<ICommandWithIdHandler<CompleteReservationCommand, ApiResponse<string>>, CompleteReservationHandler>();
+
+        services.AddScoped<ICommandWithIdHandler<CompleteReservationCommand, ApiResponse<string>>, CompleteReservationHandler>();
+
+        services.AddScoped<ICommandWithIdHandler<ReviewReservationCommand, ApiResponse<string>>, ReviewReservationHandler>();
+
+        services.AddScoped<ICommandWithIdHandler<CancelReservationCommand, ApiResponse<string>>, CancelReservationHandler>();
     }
 
     public static void AddQueries(this IServiceCollection services)

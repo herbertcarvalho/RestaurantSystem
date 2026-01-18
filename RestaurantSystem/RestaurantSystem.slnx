@@ -5,4 +5,5 @@
     <Project Path="../Infrastructure/Infrastructure.csproj" />
     <Project Path="RestaurantSystem.Api.csproj" />
   </Folder>
+  <Project Path="../Tests/Tests.csproj" Id="f235157d-8783-4790-ac91-76e679981ea1" />
 </Solution>

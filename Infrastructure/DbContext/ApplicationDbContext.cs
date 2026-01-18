@@ -38,7 +38,6 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         modelBuilder.ApplyConfiguration(new RefreshTokenMap());
         modelBuilder.ApplyConfiguration(new RestaurantReviewMap());
 
-
         base.OnModelCreating(modelBuilder);
         modelBuilder.ToSnakeCaseNames();
     }

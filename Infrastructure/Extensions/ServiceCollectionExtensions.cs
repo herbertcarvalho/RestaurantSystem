@@ -103,6 +103,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IReservationRepository, ReservationRepository>();
         services.AddTransient<IRestaurantRepository, RestaurantRepository>();
         services.AddTransient<IRefreshTokenRepository, RefreshTokenRepository>();
+        services.AddTransient<IRestaurantReviewRepository, RestaurantReviewRepository>();
     }
 
     public static void AddHangfireServiceSignalR(this IServiceCollection services, IConfiguration configuration)
