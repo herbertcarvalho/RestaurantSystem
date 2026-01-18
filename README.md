@@ -104,3 +104,6 @@ cd nome-do-projeto
 
 **3. Subir docker compose**
 docker compose up -d
+
+**4. SignalR**
+Abrir o documento signalR.html na pasta raiz do projeto e conectar com o HUB
