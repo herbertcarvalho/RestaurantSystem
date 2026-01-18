@@ -113,7 +113,10 @@ using (var scope = app.Services.CreateScope())
 }
 #endregion
 
-app.UseHangfireDashboard("/hangfire");
+app.UseHangfireDashboard("/hangfire", new DashboardOptions
+{
+    Authorization = new[] { new AllowAllAuthorizationFilter() }
+});
 app.MapHealthChecks("/health", new HealthCheckOptions
 {
     ResponseWriter = async (context, report) =>
@@ -154,3 +157,11 @@ app.MapControllers();
 
 ServiceCollectionExtensions.AddJobs();
 app.Run();
+
+public class AllowAllAuthorizationFilter : Hangfire.Dashboard.IDashboardAuthorizationFilter
+{
+    public bool Authorize(Hangfire.Dashboard.DashboardContext context)
+    {
+        return true;
+    }
+}
