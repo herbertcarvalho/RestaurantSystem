@@ -36,6 +36,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         modelBuilder.ApplyConfiguration(new ReservationStatusMap());
         modelBuilder.ApplyConfiguration(new RestaurantMap());
         modelBuilder.ApplyConfiguration(new RefreshTokenMap());
+        modelBuilder.ApplyConfiguration(new RestaurantReviewMap());
 
 
         base.OnModelCreating(modelBuilder);
