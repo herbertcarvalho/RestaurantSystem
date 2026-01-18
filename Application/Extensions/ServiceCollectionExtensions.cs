@@ -1,4 +1,5 @@
 ﻿using Application.Commands.CheckInCustomer;
+using Application.Commands.CompleteReservation;
 using Application.Commands.ConfirmReservation;
 using Application.Commands.CreateReservation;
 using Application.Commands.Login;
@@ -30,6 +31,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICommandHandler<LoginCommand, ApiResponse<LoginCommandResponse>>, LoginHandler>();
 
         services.AddScoped<ICommandHandler<RefreshTokenCommand, ApiResponse<LoginCommandResponse>>, RefreshTokenHandler>();
+
+        services.AddScoped<ICommandWithIdHandler<CompleteReservationCommand, ApiResponse<string>>, CompleteReservationHandler>();
     }
 
     public static void AddQueries(this IServiceCollection services)
