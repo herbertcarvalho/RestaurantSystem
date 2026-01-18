@@ -1553,3 +1553,6 @@ WHERE id = @p15;
 2026-01-18 09:02:33.248 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.ReservationsController.CancelReservationCommand (RestaurantSystem.Api)'
 2026-01-18 09:02:33.248 -03:00 [INF] Request finished HTTP/2 PUT https://localhost:7272/api/v1/reservations/147/cancel - 200 null application/json; charset=utf-8 23.8897ms
 2026-01-18 09:06:53.554 -03:00 [INF] 2 servers were removed due to timeout
+2026-01-18 09:37:06.201 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-18 09:37:06.557 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-18 09:37:07.481 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.

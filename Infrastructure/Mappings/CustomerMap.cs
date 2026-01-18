@@ -26,5 +26,19 @@ internal class CustomerMap : IEntityTypeConfiguration<Customer>
         builder.HasMany(x => x.Reservations)
                .WithOne(x => x.Customer)
                .HasForeignKey(x => x.CustomerId);
+
+        var customers = new List<Customer>();
+        for (int i = 1; i <= 51; i++)
+        {
+            customers.Add(new Customer
+            {
+                Id = i,
+                Name = $"Customer {i}",
+                Email = $"customer{i}@example.com",
+                Phone = (10000000000 + i).ToString() // ensures 11-digit phone numbers
+            });
+        }
+
+        builder.HasData(customers);
     }
 }
