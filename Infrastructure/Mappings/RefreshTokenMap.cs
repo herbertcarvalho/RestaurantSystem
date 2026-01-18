@@ -19,5 +19,7 @@ internal class RefreshTokenMap : IEntityTypeConfiguration<RefreshToken>
 
         builder.Property(x => x.ExpiresIn)
                .IsRequired();
+
+        builder.HasIndex(r => r.Token).IsUnique();
     }
 }

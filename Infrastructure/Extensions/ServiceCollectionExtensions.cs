@@ -1,4 +1,5 @@
-﻿using Domain.Repositories;
+﻿using Asp.Versioning;
+using Domain.Repositories;
 using Hangfire;
 using Hangfire.PostgreSql;
 using Infrastructure.DbContext;
@@ -10,8 +11,10 @@ using Infrastructure.Repositories;
 using Infrastructure.Services.Hubs;
 using Infrastructure.Services.Notifier;
 using Infrastructure.Services.ReservationServ;
+using Infrastructure.Services.TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -20,6 +23,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Threading.RateLimiting;
 
 namespace Infrastructure.Extensions;
 
@@ -58,6 +62,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IRabbitMqPublisher, RabbitMqPublisher>();
         services.AddHostedService<RabbitMqConsumer>();
         services.AddScoped<ReservationNotifier>();
+        services.AddScoped<TokenService>();
     }
 
     public static void AddCustomIdentity(this IServiceCollection services, IConfiguration configuration)
@@ -92,6 +97,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<ICustomerRepository, CustomerRepository>();
         services.AddTransient<IReservationRepository, ReservationRepository>();
         services.AddTransient<IRestaurantRepository, RestaurantRepository>();
+        services.AddTransient<IRefreshTokenRepository, RefreshTokenRepository>();
     }
 
     public static void AddHangfireServiceSignalR(this IServiceCollection services, IConfiguration configuration)
@@ -131,5 +137,41 @@ public static class ServiceCollectionExtensions
     public static void MapHubs(this WebApplication app)
     {
         app.MapHub<ReservationHub>("/hubs/reservations");
+    }
+
+    public static void AddRateLimit(this IServiceCollection services)
+    {
+        services.AddRateLimiter(options =>
+        {
+            options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
+            {
+                var username = httpContext.User.Identity?.Name ?? "anonymous";
+
+                return RateLimitPartition.GetFixedWindowLimiter(username, _ => new FixedWindowRateLimiterOptions
+                {
+                    PermitLimit = 100,
+                    Window = TimeSpan.FromMinutes(1),
+                    QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+                    QueueLimit = 0
+                });
+            });
+
+            options.OnRejected = async (context, cancellationToken) =>
+            {
+                context.HttpContext.Response.StatusCode = 429;
+                await context.HttpContext.Response.WriteAsync("Too many requests. Try again later.", cancellationToken);
+            };
+        });
+    }
+
+    public static void AddVersioning(this IServiceCollection services)
+    {
+        services.AddApiVersioning(options =>
+        {
+            options.DefaultApiVersion = new ApiVersion(1, 0);
+            options.AssumeDefaultVersionWhenUnspecified = true;
+            options.ReportApiVersions = true;
+            options.ApiVersionReader = new UrlSegmentApiVersionReader();
+        });
     }
 }

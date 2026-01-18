@@ -50,5 +50,7 @@ internal class ReservationMap : IEntityTypeConfiguration<Reservation>
         builder.HasOne(x => x.Restaurant)
                .WithMany(x => x.Reservations)
                .HasForeignKey(x => x.RestaurantId);
+
+        builder.HasIndex(r => r.Guid).IsUnique();
     }
 }
