@@ -1,100 +1,76 @@
-🍽️ Restaurant System
+# 🍽️ Restaurant Reservation System
 
-Sistema de gerenciamento de reservas de restaurante desenvolvido em .NET 10, seguindo Clean Architecture + DDD + CQRS, com Entity Framework Core e PostgreSQL.
+Sistema robusto de gerenciamento de reservas de restaurante desenvolvido em **.NET 10**. O projeto utiliza padrões arquiteturais modernos para garantir escalabilidade, manutenibilidade e separação de responsabilidades.
 
-🚀 Tecnologias
+## 🚀 Tecnologias e Padrões
 
-.NET 10
+* **Runtime:** .NET 10
+* **Arquitetura:** Clean Architecture + Domain-Driven Design (DDD)
+* **Padrões:** CQRS (Command Query Responsibility Segregation)
+* **Persistência:** Entity Framework Core & PostgreSQL
+* **Segurança:** JWT com Refresh Token
+* **Comunicação:** Domain Events para desacoplamento de processos
 
-Clean Architecture
+---
 
-Domain-Driven Design (DDD)
+## 🏗️ Arquitetura
 
-CQRS
+O projeto segue os princípios da **Clean Architecture**, dividindo-se em:
 
-Entity Framework Core
+1.  **Domain:** Entidades, Objetos de Valor, Agregados e Interfaces de Domínio.
+2.  **Application:** Casos de uso (Commands/Queries), DTOs e Validadores.
+3.  **Infrastructure:** Implementação de repositórios, contexto do banco de dados (EF Core) e serviços externos.
+4.  **API:** Controllers e configurações de Middleware.
 
-PostgreSQL
+---
 
-📋 Status das Reservas
+## 📋 Status das Reservas
 
-As reservas podem ter os seguintes status:
+O sistema gerencia o ciclo de vida da reserva através dos seguintes estados:
 
-Status	Descrição
-PENDING	Reserva criada, aguardando confirmação
-CONFIRMED	Reserva confirmada pelo restaurante
-CHECKED_IN	Cliente fez check-in no restaurante
-REVIEW	Reserva finalizada, aguardando avaliação
-COMPLETED	Reserva finalizada e avaliada
-CANCELLED	Reserva cancelada
-NO_SHOW	Cliente não compareceu
-🔐 Autenticação
+| Status | Descrição |
+| :--- | :--- |
+| `PENDING` | Reserva criada, aguardando confirmação. |
+| `CONFIRMED` | Reserva confirmada pelo restaurante. |
+| `CHECKED_IN` | Cliente presente no estabelecimento. |
+| `REVIEW` | Atendimento finalizado, aguardando avaliação. |
+| `COMPLETED` | Reserva finalizada e avaliada. |
+| `CANCELLED` | Reserva cancelada pelo cliente ou sistema. |
+| `NO_SHOW` | Cliente não compareceu no horário agendado. |
 
-O sistema possui usuário único, não há cadastro de novos usuários:
+---
 
-Email: admin@restaurant.com
+## 🔐 Autenticação e Segurança
 
-Senha: Admin123!
+O sistema utiliza um modelo de usuário administrativo único para gestão do restaurante.
 
-Regras de Login
+* **Email:** `admin@restaurant.com`
+* **Senha:** `Admin123!`
 
-Ao logar, todos os refresh tokens antigos são invalidados.
+### Regras de Login
+* **Refresh Token:** Implementado para renovação de sessão sem necessidade de novo login manual.
+* **Invalidating Strategy:** Ao realizar um login, todos os refresh tokens antigos do usuário são invalidados, garantindo que apenas a sessão mais recente permaneça ativa.
 
-Refresh Token
+---
 
-Implementado para renovação de sessão.
+## 🛠️ Regras de Negócio
 
-Cada login invalida os tokens anteriores para garantir segurança.
+### Fluxo de Reserva
+* **Criação Automática:** Caso o cliente não exista na base de dados, ele é criado automaticamente ao realizar uma reserva.
+* **Validação de Transições:**
+    * Confirmação permitida apenas para status `PENDING`.
+    * Check-in permitido apenas para status `CONFIRMED`.
+    * Avaliação permitida apenas após o restaurante marcar como `REVIEW`.
 
-🛠️ Funcionalidades
-Criar Reserva
+### Política de Cancelamento e Reembolso
+O estorno é calculado automaticamente com base no tempo de antecedência:
 
-Status inicial: PENDING
+* **> 24h de antecedência:** 100% de reembolso.
+* **Entre 2h e 24h de antecedência:** 50% de reembolso.
+* **< 2h de antecedência:** Sem reembolso (0%).
 
-Se o cliente não existir, é criado automaticamente.
+---
 
-Ao criar a reserva, um evento é disparado.
+## ⚡ Observações Técnicas
 
-Confirmar Reserva
-
-Só é possível confirmar reservas com status PENDING.
-
-Ao confirmar, um evento é disparado.
-
-Check-In
-
-Só é possível fazer check-in em reservas CONFIRMED.
-
-Ao fazer check-in, um evento é disparado.
-
-Completar Reserva
-
-O restaurante marca a reserva como REVIEW após o check-in.
-
-Avaliar / Review
-
-Adiciona pontuação ao restaurante.
-
-Só pode ser usado após o restaurante completar a reserva.
-
-Muda o status de REVIEW para COMPLETED.
-
-Cancelar Reserva
-
-Só é possível cancelar reservas que não estejam nos status: COMPLETED, CANCELLED, NO_SHOW.
-
-Política de reembolso:
-
-Cancelado mais de 24h antes: 100% do valor
-
-Cancelado entre 2h e 24h antes: 50% do valor
-
-Cancelado menos de 2h antes: sem reembolso
-
-⚡ Observações
-
-Eventos são disparados em todas as ações importantes de reservas para integração futura (ex.: notificações, analytics).
-
-Arquitetura segue Clean Architecture e CQRS para facilitar manutenção e escalabilidade.
-
-O sistema está parcialmente implementado; priorize a finalização apenas quando possível.
+* **Eventos:** Ações importantes (Criação, Confirmação, Check-in) disparam eventos de domínio para permitir integrações futuras com serviços de notificação ou
