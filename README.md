@@ -80,3 +80,27 @@ O cancelamento é permitido desde que a reserva não esteja como `COMPLETED`, `C
 * **Status do Projeto:** O sistema está parcialmente implementado. A prioridade atual é a finalização dos Handlers de domínio.
 
 ---
+
+## 🐳 Como Rodar o Projeto
+
+Este projeto está containerizado com **Docker**, o que torna a configuração do ambiente muito mais simples e rápida.
+
+### 📋 Pré-requisitos
+
+Antes de começar, você precisa ter instalado:
+* [Docker](https://docs.docker.com/get-docker/)
+
+---
+
+### 🚀 Passo a Passo
+
+Siga as etapas abaixo para subir a aplicação:
+
+**1. Clonar o repositório**
+git clone [https://github.com/seu-usuario/nome-do-projeto.git](https://github.com/seu-usuario/nome-do-projeto.git)
+
+**2. Abrir cmd na pasta do projeto**
+cd nome-do-projeto
+
+**3. Subir docker compose**
+docker compose up -d
