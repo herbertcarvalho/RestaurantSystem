@@ -97,7 +97,7 @@ Antes de começar, você precisa ter instalado:
 Siga as etapas abaixo para subir a aplicação:
 
 **1. Clonar o repositório**
-git clone [https://github.com/seu-usuario/nome-do-projeto.git](https://github.com/seu-usuario/nome-do-projeto.git)
+git clone [https://github.com/herbertcarvalho/RestaurantSystem.git](https://github.com/herbertcarvalho/RestaurantSystem.git)
 
 **2. Abrir cmd na pasta do projeto**
 cd nome-do-projeto
