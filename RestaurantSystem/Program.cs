@@ -2,10 +2,13 @@ using Application.Extensions;
 using Application.Interfaces;
 using Domain.Events;
 using Hangfire;
+using Hangfire.PostgreSql;
 using Infrastructure.DbContext;
 using Infrastructure.Extensions;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using RabbitMQ.Client;
 using RestaurantSystem.Api.Middleware;
 using ServiceCollectionExtensions = Infrastructure.Extensions.ServiceCollectionExtensions;
 
@@ -26,12 +29,32 @@ builder.Services.AddDomainEvents();
 builder.Services.AddServices();
 builder.Services.AddCommands();
 builder.Services.AddQueries();
-builder.Services.AddHealthChecks().AddDbContextCheck<ApplicationDbContext>();
+builder.Services.AddHangfireServiceSignalR(builder.Configuration);
+#region HealthConfig
+string connectionString = builder.Configuration.GetConnectionString("ApplicationConnection");
+string redisConnectionString = builder.Configuration.GetConnectionString("Redis");
+string rabbitConnectionString = builder.Configuration.GetConnectionString("RabbitMQ");
+var hangfireStorage = new PostgreSqlStorage(connectionString);
+
+var connection = new ConnectionFactory
+{
+    Uri = new Uri(rabbitConnectionString)
+};
+var connect = await connection.CreateConnectionAsync();
+#endregion
+builder.Services.AddHealthChecks()
+    .AddNpgSql(connectionString, name: "postgres")
+    .AddRedis(redisConnectionString, name: "redis")
+    .AddRabbitMQ(
+        sp => connect,
+        name: "rabbitmq"
+    )
+    .AddHangfire(null, name: "hangfire");
+
 builder.Services.AddScoped<CommandDispatcher>();
 builder.Services.AddScoped<QueryDispatcher>();
 builder.Services.AddScoped<DomainEventPublisher>();
 builder.Services.AddValidation();
-builder.Services.AddHangfireServiceSignalR(builder.Configuration);
 builder.Services.AddHybridCaching(builder.Configuration);
 builder.Services.AddRateLimit();
 builder.Services.AddVersioning();
@@ -91,6 +114,25 @@ using (var scope = app.Services.CreateScope())
 #endregion
 
 app.UseHangfireDashboard("/hangfire");
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    ResponseWriter = async (context, report) =>
+    {
+        context.Response.ContentType = "application/json";
+        var result = System.Text.Json.JsonSerializer.Serialize(new
+        {
+            status = report.Status.ToString(),
+            checks = report.Entries.Select(e => new
+            {
+                name = e.Key,
+                status = e.Value.Status.ToString(),
+                exception = e.Value.Exception?.Message,
+                duration = e.Value.Duration.ToString()
+            })
+        });
+        await context.Response.WriteAsync(result);
+    }
+});
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {

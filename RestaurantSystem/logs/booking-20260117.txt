@@ -1156,3 +1156,1602 @@ RETURNING id;
 2026-01-17 22:41:43.192 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 506.7811ms
 2026-01-17 22:41:43.194 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
 2026-01-17 22:41:43.200 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 720.0785ms
+2026-01-17 22:43:46.509 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:43:47.022 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:43:47.087 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:43:47.173 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:43:47.181 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:43:47.183 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:43:47.186 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:43:47.191 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:43:47.218 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:43:47.464 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:43:47.524 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:43:47.567 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:43:47.591 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:43:48.301 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:43:48.303 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:43:48.349 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:43:48.350 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:43:48.351 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:43:48.352 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:43:48.353 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:43:48.354 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:43:48.376 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:43:48.377 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:43:48.378 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:43:48.399 -03:00 [INF] Server desktop-t1oitsg:25492:cd740cfc successfully announced in 21.7586 ms
+2026-01-17 22:43:48.406 -03:00 [INF] Server desktop-t1oitsg:25492:cd740cfc is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:43:48.644 -03:00 [INF] Server desktop-t1oitsg:25492:cd740cfc all the dispatchers started
+2026-01-17 22:43:48.916 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 22:43:48.935 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 31.6044ms
+2026-01-17 22:43:49.099 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/swagger/v1/swagger.json - null null
+2026-01-17 22:43:49.256 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 157.5992ms
+2026-01-17 22:43:51.766 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/metrics - null null
+2026-01-17 22:43:51.795 -03:00 [INF] Executing endpoint '/metrics'
+2026-01-17 22:43:51.816 -03:00 [INF] Executed endpoint '/metrics'
+2026-01-17 22:43:51.819 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/metrics - 200 null text/plain; charset=utf-8; version=0.0.4 53.3236ms
+2026-01-17 22:44:07.159 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/metrics - null null
+2026-01-17 22:44:07.165 -03:00 [INF] Executing endpoint '/metrics'
+2026-01-17 22:44:07.167 -03:00 [INF] Executed endpoint '/metrics'
+2026-01-17 22:44:07.168 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/metrics - 200 null text/plain; charset=utf-8; version=0.0.4 9.0906ms
+2026-01-17 22:44:08.600 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/metrics - null null
+2026-01-17 22:44:08.603 -03:00 [INF] Executing endpoint '/metrics'
+2026-01-17 22:44:08.604 -03:00 [INF] Executed endpoint '/metrics'
+2026-01-17 22:44:08.605 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/metrics - 200 null text/plain; charset=utf-8; version=0.0.4 5.7759ms
+2026-01-17 22:44:17.790 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:44:17.840 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:17.860 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:44:17.889 -03:00 [INF] Executing action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) - Validation state: "Valid"
+2026-01-17 22:44:17.930 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:44:18.059 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:44:18.082 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:44:18.090 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:44:18.098 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:44:18.113 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:44:18.118 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:44:18.134 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:44:18.231 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p4='27', @p0='2026-01-18T01:41:43.1250710Z' (DbType = DateTime), @p1='2026-01-25T01:41:43.1251640Z' (DbType = DateTime), @p2='True', @p3='e62a5125-b2be-4927-83fe-f750b920ad5b' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:44:18.265 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:44:18.2440100Z' (DbType = DateTime), @p1='2026-01-25T01:44:18.2440601Z' (DbType = DateTime), @p2='False', @p3='3e6e5886-17cb-436d-b9bf-d04c84d34890' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:44:18.285 -03:00 [INF] Executed action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 392.5804ms.
+2026-01-17 22:44:18.292 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:44:18.322 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 457.2734ms
+2026-01-17 22:44:18.324 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:18.326 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 536.0655ms
+2026-01-17 22:44:18.953 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:44:18.958 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:18.959 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:44:18.963 -03:00 [INF] Executing action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) - Validation state: "Valid"
+2026-01-17 22:44:19.025 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:44:19.090 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:44:19.095 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:44:19.099 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:44:19.103 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:44:19.105 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:44:19.108 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:44:19.112 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:44:19.116 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='28', @p0='2026-01-18T01:44:18.2440100Z' (DbType = DateTime), @p1='2026-01-25T01:44:18.2440600Z' (DbType = DateTime), @p2='True', @p3='3e6e5886-17cb-436d-b9bf-d04c84d34890' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:44:19.121 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:44:19.1189318Z' (DbType = DateTime), @p1='2026-01-25T01:44:19.1189343Z' (DbType = DateTime), @p2='False', @p3='2741e20a-f5ea-4368-a100-7a79580f0e3f' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:44:19.123 -03:00 [INF] Executed action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 158.2466ms.
+2026-01-17 22:44:19.125 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:44:19.127 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 164.6078ms
+2026-01-17 22:44:19.128 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:19.129 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 176.0018ms
+2026-01-17 22:44:19.687 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:44:19.691 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:19.692 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:44:19.694 -03:00 [INF] Executing action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) - Validation state: "Valid"
+2026-01-17 22:44:19.712 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:44:19.776 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:44:19.779 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:44:19.783 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:44:19.787 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:44:19.790 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:44:19.793 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:44:19.796 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:44:19.801 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='29', @p0='2026-01-18T01:44:19.1189310Z' (DbType = DateTime), @p1='2026-01-25T01:44:19.1189340Z' (DbType = DateTime), @p2='True', @p3='2741e20a-f5ea-4368-a100-7a79580f0e3f' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:44:19.806 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:44:19.8036837Z' (DbType = DateTime), @p1='2026-01-25T01:44:19.8036894Z' (DbType = DateTime), @p2='False', @p3='e7341a89-f2de-4240-85c5-3bc3f1975714' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:44:19.808 -03:00 [INF] Executed action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 112.4594ms.
+2026-01-17 22:44:19.809 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:44:19.810 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 116.8254ms
+2026-01-17 22:44:19.811 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:19.812 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 124.8173ms
+2026-01-17 22:44:20.359 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:44:20.361 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:20.362 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:44:20.363 -03:00 [INF] Executing action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) - Validation state: "Valid"
+2026-01-17 22:44:20.368 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:44:20.432 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:44:20.436 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:44:20.439 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:44:20.443 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:44:20.444 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:44:20.447 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:44:20.450 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:44:20.454 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='30', @p0='2026-01-18T01:44:19.8036830Z' (DbType = DateTime), @p1='2026-01-25T01:44:19.8036890Z' (DbType = DateTime), @p2='True', @p3='e7341a89-f2de-4240-85c5-3bc3f1975714' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:44:20.458 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:44:20.4559336Z' (DbType = DateTime), @p1='2026-01-25T01:44:20.4559368Z' (DbType = DateTime), @p2='False', @p3='b615922f-103d-4baa-bfe8-7fce63617200' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:44:20.459 -03:00 [INF] Executed action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 94.8791ms.
+2026-01-17 22:44:20.461 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:44:20.462 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 98.9869ms
+2026-01-17 22:44:20.463 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:20.464 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 105.7012ms
+2026-01-17 22:44:21.149 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:44:21.152 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:21.153 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:44:21.155 -03:00 [INF] Executing action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) - Validation state: "Valid"
+2026-01-17 22:44:21.159 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:44:21.223 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:44:21.227 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:44:21.231 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:44:21.235 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:44:21.237 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:44:21.240 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:44:21.243 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:44:21.247 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='31', @p0='2026-01-18T01:44:20.4559330Z' (DbType = DateTime), @p1='2026-01-25T01:44:20.4559360Z' (DbType = DateTime), @p2='True', @p3='b615922f-103d-4baa-bfe8-7fce63617200' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:44:21.251 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2026-01-18T01:44:21.2492660Z' (DbType = DateTime), @p1='2026-01-25T01:44:21.2492702Z' (DbType = DateTime), @p2='False', @p3='546f9ab8-07c7-4fb6-84c2-f13508df0f8f' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:44:21.254 -03:00 [INF] Executed action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 97.3649ms.
+2026-01-17 22:44:21.255 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:44:21.256 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 101.3208ms
+2026-01-17 22:44:21.258 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:44:21.259 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 109.4471ms
+2026-01-17 22:44:23.902 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/metrics - null null
+2026-01-17 22:44:23.906 -03:00 [INF] Executing endpoint '/metrics'
+2026-01-17 22:44:23.908 -03:00 [INF] Executed endpoint '/metrics'
+2026-01-17 22:44:23.909 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/metrics - 200 null text/plain; charset=utf-8; version=0.0.4 7.3115ms
+2026-01-17 22:45:05.465 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/otel-metrics - null null
+2026-01-17 22:45:05.470 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/otel-metrics - 404 null null 4.223ms
+2026-01-17 22:45:05.473 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/otel-metrics, Response status code: 404
+2026-01-17 22:45:07.658 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/metrics - null null
+2026-01-17 22:45:07.662 -03:00 [INF] Executing endpoint '/metrics'
+2026-01-17 22:45:07.664 -03:00 [INF] Executed endpoint '/metrics'
+2026-01-17 22:45:07.665 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/metrics - 200 null text/plain; charset=utf-8; version=0.0.4 7.6997ms
+2026-01-17 22:48:48.588 -03:00 [INF] 1 servers were removed due to timeout
+2026-01-17 22:55:09.223 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:55:09.574 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:55:09.628 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:55:09.712 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:55:09.720 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:55:09.723 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:55:09.725 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:55:09.730 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:55:09.758 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:55:09.999 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:55:10.057 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:55:10.097 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:55:10.119 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:55:10.686 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:55:10.687 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:55:10.725 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:55:10.726 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:55:10.727 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:55:10.728 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:55:10.729 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:55:10.730 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:55:10.748 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:55:10.749 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:55:10.750 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:55:10.769 -03:00 [INF] Server desktop-t1oitsg:24548:bb752392 successfully announced in 19.8442 ms
+2026-01-17 22:55:10.774 -03:00 [INF] Server desktop-t1oitsg:24548:bb752392 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:55:11.003 -03:00 [INF] Server desktop-t1oitsg:24548:bb752392 all the dispatchers started
+2026-01-17 22:55:31.631 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/metrics - null null
+2026-01-17 22:55:31.760 -03:00 [INF] Executing endpoint '/metrics'
+2026-01-17 22:55:31.787 -03:00 [INF] Executed endpoint '/metrics'
+2026-01-17 22:55:31.792 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/metrics - 200 null text/plain; charset=utf-8; version=0.0.4 171.413ms
+2026-01-17 22:55:33.863 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/recurring - null null
+2026-01-17 22:55:33.991 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/recurring - 200 null text/html 128.0712ms
+2026-01-17 22:55:34.070 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css182201119905253 - null null
+2026-01-17 22:55:34.072 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_vs/browserLink - null null
+2026-01-17 22:55:34.071 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 22:55:34.071 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css-dark182201474460314 - null null
+2026-01-17 22:55:34.071 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/js18220754642304 - null null
+2026-01-17 22:55:34.090 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 18.3058ms
+2026-01-17 22:55:34.103 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css-dark182201474460314 - 200 null text/css 31.8491ms
+2026-01-17 22:55:34.103 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css182201119905253 - 200 null text/css 33.0334ms
+2026-01-17 22:55:34.111 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/js18220754642304 - 200 null application/javascript 39.4658ms
+2026-01-17 22:55:34.127 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.9285ms
+2026-01-17 22:55:34.151 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - null null
+2026-01-17 22:55:34.156 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:34.160 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - 200 null font/woff2 8.5148ms
+2026-01-17 22:55:36.152 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:36.155 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:36.180 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 28.0908ms
+2026-01-17 22:55:38.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:38.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:38.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 11.0303ms
+2026-01-17 22:55:41.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:41.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:41.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.221ms
+2026-01-17 22:55:44.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:44.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:44.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.9113ms
+2026-01-17 22:55:45.467 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 22:55:45.471 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 4.0982ms
+2026-01-17 22:55:45.561 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/swagger/v1/swagger.json - null null
+2026-01-17 22:55:45.645 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 83.515ms
+2026-01-17 22:55:47.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:47.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:47.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.0485ms
+2026-01-17 22:55:49.628 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:55:49.634 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 404 null null 5.4555ms
+2026-01-17 22:55:49.637 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/health, Response status code: 404
+2026-01-17 22:55:50.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:50.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:50.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.4534ms
+2026-01-17 22:55:53.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:53.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:53.845 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.8455ms
+2026-01-17 22:55:56.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:56.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:56.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.437ms
+2026-01-17 22:55:59.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:55:59.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:55:59.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.6096ms
+2026-01-17 22:56:02.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:02.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:02.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.1489ms
+2026-01-17 22:56:05.836 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:05.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:05.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.1134ms
+2026-01-17 22:56:08.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:08.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:08.846 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 12.069ms
+2026-01-17 22:56:11.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:11.839 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:11.847 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 12.5921ms
+2026-01-17 22:56:14.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:14.828 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:14.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.6879ms
+2026-01-17 22:56:17.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:17.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:17.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.3727ms
+2026-01-17 22:56:20.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:20.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:20.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7023ms
+2026-01-17 22:56:23.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:23.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:23.851 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 27.21ms
+2026-01-17 22:56:26.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:26.834 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:26.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.2921ms
+2026-01-17 22:56:29.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:29.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:29.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.4597ms
+2026-01-17 22:56:32.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:32.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:32.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.6903ms
+2026-01-17 22:56:35.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:35.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:35.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2255ms
+2026-01-17 22:56:38.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:38.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:38.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.3209ms
+2026-01-17 22:56:41.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:41.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:41.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.3483ms
+2026-01-17 22:56:44.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:44.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:44.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.9369ms
+2026-01-17 22:56:47.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:47.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:47.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2634ms
+2026-01-17 22:56:50.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:50.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:50.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2246ms
+2026-01-17 22:56:53.821 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:53.823 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:53.828 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.7801ms
+2026-01-17 22:56:56.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:56.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:56.830 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.8422ms
+2026-01-17 22:56:59.832 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:56:59.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:56:59.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.9597ms
+2026-01-17 22:57:02.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:02.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:02.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2042ms
+2026-01-17 22:57:05.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:05.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:05.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2826ms
+2026-01-17 22:57:08.830 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:08.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:08.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.5493ms
+2026-01-17 22:57:11.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:11.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:11.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.1772ms
+2026-01-17 22:57:14.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:14.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:14.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.3868ms
+2026-01-17 22:57:17.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:17.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:17.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.4125ms
+2026-01-17 22:57:20.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:20.839 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:20.846 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.7605ms
+2026-01-17 22:57:23.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:23.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:23.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.4547ms
+2026-01-17 22:57:26.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:26.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:26.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.5002ms
+2026-01-17 22:57:29.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:29.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:29.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.1769ms
+2026-01-17 22:57:32.826 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:32.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:32.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.0361ms
+2026-01-17 22:57:35.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:35.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:35.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.5075ms
+2026-01-17 22:57:38.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:38.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:38.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2639ms
+2026-01-17 22:57:41.836 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:41.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:41.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.6612ms
+2026-01-17 22:57:44.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:44.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:44.830 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.6838ms
+2026-01-17 22:57:47.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:47.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:47.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.4103ms
+2026-01-17 22:57:50.826 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:57:50.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:57:50.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.9739ms
+2026-01-17 22:58:24.020 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:58:24.135 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:58:24.882 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:58:25.048 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:58:25.073 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:58:25.156 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:58:25.165 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:58:25.167 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:58:25.170 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:58:25.175 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:58:25.202 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:58:25.441 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:58:25.485 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:58:25.512 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:58:25.531 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:58:26.084 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 22:58:26.084 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 22:58:26.125 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 22:58:26.126 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 22:58:26.127 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 22:58:26.128 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 22:58:26.128 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 22:58:26.129 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 22:58:26.174 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:58:26.203 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:58:26.204 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 22:58:26.215 -03:00 [INF] Server desktop-t1oitsg:3716:4bd5b3d3 successfully announced in 40.4014 ms
+2026-01-17 22:58:26.220 -03:00 [INF] Server desktop-t1oitsg:3716:4bd5b3d3 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 22:58:26.326 -03:00 [INF] 1 servers were removed due to timeout
+2026-01-17 22:58:26.456 -03:00 [INF] Server desktop-t1oitsg:3716:4bd5b3d3 all the dispatchers started
+2026-01-17 22:58:27.760 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:58:27.877 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:58:27.892 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 2.9879ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:58:28.118 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:58:28.124 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 372.8378ms
+2026-01-17 22:58:30.573 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:58:30.579 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:58:30.581 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 0.3429ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:58:30.585 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:58:30.586 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 12.7009ms
+2026-01-17 22:58:31.449 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:58:31.457 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:58:31.458 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 0.2768ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:58:31.461 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:58:31.462 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 12.6825ms
+2026-01-17 22:58:40.024 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:58:40.028 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:58:40.030 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 0.2997ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:58:40.033 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:58:40.034 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 10.1682ms
+2026-01-17 22:58:49.066 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/auth/login - application/json 63
+2026-01-17 22:58:49.128 -03:00 [INF] Executing endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:58:49.147 -03:00 [INF] Route matched with {action = "LoginCommand", controller = "Auth", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginCommand(Application.Commands.Login.LoginCommand) on controller RestaurantSystem.Api.Controllers.AuthController (RestaurantSystem.Api).
+2026-01-17 22:58:49.175 -03:00 [INF] Executing action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) - Validation state: "Valid"
+2026-01-17 22:58:49.226 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@normalizedUserName='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_user_name = @normalizedUserName
+LIMIT 1
+2026-01-17 22:58:49.369 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@user_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.claim_type, a.claim_value, a.user_id
+FROM asp_net_user_claims AS a
+WHERE a.user_id = @user_Id
+2026-01-17 22:58:49.395 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0.name
+FROM asp_net_user_roles AS a
+INNER JOIN asp_net_roles AS a0 ON a.role_id = a0.id
+WHERE a.user_id = @userId
+2026-01-17 22:58:49.403 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:58:49.413 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@role_Id='1'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.claim_type, a.claim_value
+FROM asp_net_role_claims AS a
+WHERE a.role_id = @role_Id
+2026-01-17 22:58:49.431 -03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-01-17 22:58:49.437 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:58:49.457 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.created_at, r.expires_in, r.is_used, r.token
+FROM refresh_token AS r
+WHERE NOT (r.is_used)
+2026-01-17 22:58:49.583 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p4='32', @p0='2026-01-18T01:44:21.2492660Z' (DbType = DateTime), @p1='2026-01-25T01:44:21.2492700Z' (DbType = DateTime), @p2='True', @p3='546f9ab8-07c7-4fb6-84c2-f13508df0f8f' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+UPDATE refresh_token SET created_at = @p0, expires_in = @p1, is_used = @p2, token = @p3
+WHERE id = @p4;
+2026-01-17 22:58:49.627 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='2026-01-18T01:58:49.5996711Z' (DbType = DateTime), @p1='2026-01-25T01:58:49.5997407Z' (DbType = DateTime), @p2='False', @p3='117c2da0-8694-4604-9252-0f8a32c8eaf5' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO refresh_token (created_at, expires_in, is_used, token)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+2026-01-17 22:58:49.648 -03:00 [INF] Executed action method RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 469.6416ms.
+2026-01-17 22:58:49.657 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Common.ApiResponse`1[[Application.Commands.Login.LoginCommandResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-01-17 22:58:49.668 -03:00 [INF] Executed action RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api) in 516.0452ms
+2026-01-17 22:58:49.669 -03:00 [INF] Executed endpoint 'RestaurantSystem.Api.Controllers.AuthController.LoginCommand (RestaurantSystem.Api)'
+2026-01-17 22:58:49.671 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/auth/login - 200 null application/json; charset=utf-8 604.8608ms
+2026-01-17 22:58:53.198 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:58:53.203 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:58:53.204 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 0.3154ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:58:53.207 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:58:53.208 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 10.4289ms
+2026-01-17 22:58:56.843 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/recurring - null null
+2026-01-17 22:58:56.969 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/recurring - 200 null text/html 125.6167ms
+2026-01-17 22:58:57.046 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css18220593308332 - null null
+2026-01-17 22:58:57.048 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css-dark182201850784279 - null null
+2026-01-17 22:58:57.048 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/js18220771112689 - null null
+2026-01-17 22:58:57.061 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css-dark182201850784279 - 200 null text/css 12.5007ms
+2026-01-17 22:58:57.062 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css18220593308332 - 200 null text/css 16.3578ms
+2026-01-17 22:58:57.064 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/js18220771112689 - 200 null application/javascript 15.8212ms
+2026-01-17 22:58:57.073 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 22:58:57.073 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_vs/browserLink - null null
+2026-01-17 22:58:57.079 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 5.9915ms
+2026-01-17 22:58:57.108 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.6253ms
+2026-01-17 22:58:57.123 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - null null
+2026-01-17 22:58:57.127 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:58:57.130 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - 200 null font/woff2 7.2326ms
+2026-01-17 22:58:59.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:58:59.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:58:59.884 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 49.4545ms
+2026-01-17 22:59:02.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:02.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:02.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.2022ms
+2026-01-17 22:59:05.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:05.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:05.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.6409ms
+2026-01-17 22:59:08.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:08.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:08.847 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 12.2153ms
+2026-01-17 22:59:11.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:11.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:11.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7084ms
+2026-01-17 22:59:12.412 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health/postgres - null null
+2026-01-17 22:59:12.416 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health/postgres - 404 null null 4.9227ms
+2026-01-17 22:59:12.420 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/health/postgres, Response status code: 404
+2026-01-17 22:59:14.821 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:14.823 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:14.829 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.4964ms
+2026-01-17 22:59:16.911 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/postgres - null null
+2026-01-17 22:59:16.915 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/postgres - 404 null null 5.029ms
+2026-01-17 22:59:16.919 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/postgres, Response status code: 404
+2026-01-17 22:59:17.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:17.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:17.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.6331ms
+2026-01-17 22:59:20.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:20.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:20.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 15.2777ms
+2026-01-17 22:59:21.257 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:59:21.263 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:59:21.265 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 0.3995ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:59:21.270 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:59:21.271 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 13.9592ms
+2026-01-17 22:59:23.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:23.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:23.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.3555ms
+2026-01-17 22:59:23.992 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 22:59:23.995 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.4265ms
+2026-01-17 22:59:23.999 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 22:59:26.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:26.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:26.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.3176ms
+2026-01-17 22:59:27.662 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:59:27.666 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:59:27.667 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 0.2665ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:59:27.670 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:59:27.671 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 9.3905ms
+2026-01-17 22:59:27.697 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 22:59:27.700 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.5244ms
+2026-01-17 22:59:27.705 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 22:59:29.832 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:29.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:29.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.2801ms
+2026-01-17 22:59:32.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:32.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:32.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.2858ms
+2026-01-17 22:59:34.669 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:59:34.673 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:59:34.674 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 0.3218ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:59:34.677 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:59:34.678 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 8.8041ms
+2026-01-17 22:59:34.696 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 22:59:34.700 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.6983ms
+2026-01-17 22:59:34.703 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 22:59:35.551 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 22:59:35.555 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 22:59:35.556 -03:00 [ERR] Health check rabbitmq with status "Unhealthy" completed after 0.3828ms with message 'null'
+System.InvalidOperationException: No service for type 'RabbitMQ.Client.IConnection' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.RabbitMQHealthCheckBuilderExtensions.<>c__DisplayClass1_0.<AddRabbitMQ>b__1(IServiceProvider sp) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/DependencyInjection/RabbitMQHealthCheckBuilderExtensions.cs:line 47
+   at HealthChecks.RabbitMQ.RabbitMQHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Rabbitmq/RabbitMQHealthCheck.cs:line 31
+2026-01-17 22:59:35.561 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 22:59:35.562 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 503 null text/plain 11.3156ms
+2026-01-17 22:59:35.580 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 22:59:35.583 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.4892ms
+2026-01-17 22:59:35.587 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 22:59:35.893 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:35.897 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:35.904 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.925ms
+2026-01-17 22:59:38.832 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:38.834 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:38.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7363ms
+2026-01-17 22:59:41.826 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:41.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:41.835 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.0084ms
+2026-01-17 22:59:44.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 22:59:44.824 -03:00 [INF] CORS policy execution successful.
+2026-01-17 22:59:44.830 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7075ms
+2026-01-17 22:59:58.025 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:59:58.137 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 22:59:58.919 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 22:59:59.073 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:59:59.105 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 22:59:59.196 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 22:59:59.203 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 22:59:59.206 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 22:59:59.209 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 22:59:59.213 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 22:59:59.243 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:59:59.492 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 22:59:59.539 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 22:59:59.568 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 22:59:59.592 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 23:00:00.296 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 23:00:00.297 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 23:00:00.340 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 23:00:00.341 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 23:00:00.342 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 23:00:00.343 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 23:00:00.344 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 23:00:00.345 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 23:00:00.364 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 23:00:00.365 -03:00 [INF] Hosting environment: Development
+2026-01-17 23:00:00.371 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 23:00:00.384 -03:00 [INF] Server desktop-t1oitsg:32148:0efeaf8e successfully announced in 19.0822 ms
+2026-01-17 23:00:00.389 -03:00 [INF] Server desktop-t1oitsg:32148:0efeaf8e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 23:00:00.612 -03:00 [INF] Server desktop-t1oitsg:32148:0efeaf8e all the dispatchers started
+2026-01-17 23:00:00.924 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:00:01.077 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:00:01.258 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.check_in_time, r.confirmed_by, r.created_at, r.customer_id, r.deposit_amount, r.deposit_amount_paid, r.guid, r.notes, r.number_of_guests, r.requires_deposit, r.reservation_date, r.restaurant_id, r.special_requests, r.status, r.transaction_id
+FROM reservation AS r
+WHERE r.status = 1 AND r.reservation_date < now() + INTERVAL '-30 mins'
+2026-01-17 23:00:01.318 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:00:01.324 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null text/plain 420.3652ms
+2026-01-17 23:00:01.347 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:00:01.354 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 6.5254ms
+2026-01-17 23:00:01.358 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:00:04.344 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:00:04.353 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:00:04.357 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:00:04.359 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null text/plain 15.0866ms
+2026-01-17 23:00:04.378 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:00:04.383 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 5.0124ms
+2026-01-17 23:00:04.388 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:00:05.093 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:00:05.097 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:00:05.101 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:00:05.103 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null text/plain 10.4996ms
+2026-01-17 23:00:05.139 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:00:05.143 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.7339ms
+2026-01-17 23:00:05.147 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:00:05.879 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:00:05.883 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:00:05.886 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:00:05.887 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null text/plain 8.6538ms
+2026-01-17 23:00:05.916 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:00:05.919 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.5084ms
+2026-01-17 23:00:05.924 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:00:07.250 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:00:07.253 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:00:07.257 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:00:07.258 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null text/plain 8.2494ms
+2026-01-17 23:00:07.277 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:00:07.281 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 4.9033ms
+2026-01-17 23:00:07.286 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:00:50.838 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/recurring - null null
+2026-01-17 23:00:50.921 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/recurring - 200 null text/html 83.6866ms
+2026-01-17 23:00:50.998 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/js182201595297628 - null null
+2026-01-17 23:00:50.998 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css18220348813603 - null null
+2026-01-17 23:00:50.998 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css-dark18220407638438 - null null
+2026-01-17 23:00:51.017 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css18220348813603 - 200 null text/css 18.6936ms
+2026-01-17 23:00:51.017 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css-dark18220407638438 - 200 null text/css 18.6066ms
+2026-01-17 23:00:51.018 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/js182201595297628 - 200 null application/javascript 19.9164ms
+2026-01-17 23:00:51.021 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 23:00:51.022 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_vs/browserLink - null null
+2026-01-17 23:00:51.033 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 12.0357ms
+2026-01-17 23:00:51.063 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.8956ms
+2026-01-17 23:00:51.067 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - null null
+2026-01-17 23:00:51.072 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:00:51.075 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - 200 null font/woff2 8.6952ms
+2026-01-17 23:00:53.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:00:53.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:00:53.859 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 26.2375ms
+2026-01-17 23:00:56.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:00:56.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:00:56.845 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.9658ms
+2026-01-17 23:00:59.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:00:59.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:00:59.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.0907ms
+2026-01-17 23:01:02.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:02.834 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:02.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.8471ms
+2026-01-17 23:01:05.830 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:05.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:05.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.7064ms
+2026-01-17 23:01:08.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:08.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:08.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.3321ms
+2026-01-17 23:01:11.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:11.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:11.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.6361ms
+2026-01-17 23:01:14.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:14.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:14.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.7076ms
+2026-01-17 23:01:17.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:17.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:17.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.0231ms
+2026-01-17 23:01:20.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:20.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:20.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 15.5183ms
+2026-01-17 23:01:23.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:23.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:23.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7963ms
+2026-01-17 23:01:26.836 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:26.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:26.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.2488ms
+2026-01-17 23:01:29.832 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:29.834 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:29.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.3646ms
+2026-01-17 23:01:32.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:32.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:32.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.782ms
+2026-01-17 23:01:35.837 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:35.839 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:35.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.8653ms
+2026-01-17 23:01:38.830 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:38.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:38.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.3459ms
+2026-01-17 23:01:41.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:41.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:41.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2096ms
+2026-01-17 23:01:44.821 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:44.823 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:44.829 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.301ms
+2026-01-17 23:01:47.836 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:47.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:47.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.5148ms
+2026-01-17 23:01:50.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:50.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:50.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.4052ms
+2026-01-17 23:01:53.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:53.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:53.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.8219ms
+2026-01-17 23:01:56.843 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:56.846 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:56.852 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.0209ms
+2026-01-17 23:01:59.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:01:59.834 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:01:59.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.6232ms
+2026-01-17 23:02:02.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:02.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:02.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.1141ms
+2026-01-17 23:02:05.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:05.828 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:05.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.9976ms
+2026-01-17 23:02:08.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:08.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:08.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.1721ms
+2026-01-17 23:02:11.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:11.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:11.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.1814ms
+2026-01-17 23:02:14.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:14.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:14.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.9262ms
+2026-01-17 23:02:17.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:17.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:17.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.444ms
+2026-01-17 23:02:20.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:20.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:20.830 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.0261ms
+2026-01-17 23:02:23.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:23.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:23.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.5874ms
+2026-01-17 23:02:26.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:26.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:26.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.4313ms
+2026-01-17 23:02:29.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:29.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:29.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.5976ms
+2026-01-17 23:02:32.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:32.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:32.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.4564ms
+2026-01-17 23:02:35.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:35.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:35.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.6896ms
+2026-01-17 23:02:38.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:38.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:38.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.8879ms
+2026-01-17 23:02:41.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:41.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:41.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 12.1135ms
+2026-01-17 23:02:44.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:44.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:44.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.8794ms
+2026-01-17 23:02:47.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:47.824 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:47.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.5646ms
+2026-01-17 23:02:50.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:50.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:50.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.5411ms
+2026-01-17 23:02:53.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:53.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:53.829 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2495ms
+2026-01-17 23:02:56.821 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:56.822 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:56.826 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 5.9167ms
+2026-01-17 23:02:59.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:02:59.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:02:59.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.5234ms
+2026-01-17 23:03:02.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:02.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:02.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.5263ms
+2026-01-17 23:03:05.830 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:05.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:05.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.5178ms
+2026-01-17 23:03:08.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:08.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:08.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.6106ms
+2026-01-17 23:03:11.850 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:11.852 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:11.858 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.3689ms
+2026-01-17 23:03:14.839 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:14.843 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:14.850 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 11.0899ms
+2026-01-17 23:03:17.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:17.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:17.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.4801ms
+2026-01-17 23:03:20.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:20.828 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:20.835 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.5308ms
+2026-01-17 23:03:23.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:23.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:23.835 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.3039ms
+2026-01-17 23:03:26.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:26.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:26.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2831ms
+2026-01-17 23:03:29.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:29.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:29.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.3375ms
+2026-01-17 23:03:32.826 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:32.828 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:32.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.7469ms
+2026-01-17 23:03:35.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:35.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:35.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.3602ms
+2026-01-17 23:03:38.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:38.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:38.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.3543ms
+2026-01-17 23:03:41.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:41.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:41.835 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.1806ms
+2026-01-17 23:03:44.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:44.834 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:44.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.582ms
+2026-01-17 23:03:47.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:47.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:47.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.8442ms
+2026-01-17 23:03:50.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:50.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:50.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.9755ms
+2026-01-17 23:03:53.836 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:53.840 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:53.845 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.4954ms
+2026-01-17 23:03:56.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:56.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:56.830 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.1841ms
+2026-01-17 23:03:59.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:03:59.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:03:59.830 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.4725ms
+2026-01-17 23:04:02.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:02.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:02.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.6219ms
+2026-01-17 23:04:05.830 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:05.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:05.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.2467ms
+2026-01-17 23:04:08.826 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:08.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:08.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.4329ms
+2026-01-17 23:04:11.826 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:11.828 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:11.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.8441ms
+2026-01-17 23:04:14.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:14.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:14.830 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.8167ms
+2026-01-17 23:04:17.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:17.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:17.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.8789ms
+2026-01-17 23:04:20.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:20.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:20.845 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.7852ms
+2026-01-17 23:04:23.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:23.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:23.829 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.8364ms
+2026-01-17 23:04:26.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:26.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:26.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.2454ms
+2026-01-17 23:04:29.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:29.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:29.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.5693ms
+2026-01-17 23:04:32.838 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:32.840 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:32.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.3159ms
+2026-01-17 23:04:35.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:35.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:35.830 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 5.755ms
+2026-01-17 23:04:38.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:38.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:38.835 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.3288ms
+2026-01-17 23:04:41.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:41.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:41.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.2023ms
+2026-01-17 23:04:44.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:44.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:44.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.9993ms
+2026-01-17 23:04:47.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:47.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:47.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.3483ms
+2026-01-17 23:04:50.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:50.830 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:50.834 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.0313ms
+2026-01-17 23:04:53.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:53.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:53.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.105ms
+2026-01-17 23:04:56.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:56.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:56.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.4211ms
+2026-01-17 23:04:59.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:04:59.828 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:04:59.958 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 131.5368ms
+2026-01-17 23:05:00.482 -03:00 [INF] 2 servers were removed due to timeout
+2026-01-17 23:05:02.827 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:02.829 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:02.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.1003ms
+2026-01-17 23:05:05.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:05.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:05.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.9924ms
+2026-01-17 23:05:08.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:08.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:08.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.9269ms
+2026-01-17 23:05:11.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:11.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:11.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.3209ms
+2026-01-17 23:05:14.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:14.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:14.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7085ms
+2026-01-17 23:05:17.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:17.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:17.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.3594ms
+2026-01-17 23:05:20.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:20.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:20.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.6444ms
+2026-01-17 23:05:23.830 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:23.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:23.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.6352ms
+2026-01-17 23:05:26.836 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:26.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:26.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.858ms
+2026-01-17 23:05:29.830 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:29.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:29.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.7992ms
+2026-01-17 23:05:32.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:32.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:32.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.892ms
+2026-01-17 23:05:35.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:35.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:35.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 6.662ms
+2026-01-17 23:05:38.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:05:38.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:05:38.840 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.1639ms
+2026-01-17 23:05:52.119 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 23:05:52.229 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 23:05:53.009 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 23:05:53.143 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 23:05:53.164 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 23:05:53.245 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 23:05:53.252 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 23:05:53.254 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 23:05:53.256 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 23:05:53.260 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 23:05:53.287 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 23:05:53.540 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 23:05:53.581 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 23:05:53.609 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 23:05:53.629 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 23:05:54.162 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 23:05:54.163 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 23:05:54.203 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 23:05:54.204 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 23:05:54.205 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 23:05:54.206 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 23:05:54.206 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 23:05:54.207 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 23:05:54.223 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 23:05:54.224 -03:00 [INF] Hosting environment: Development
+2026-01-17 23:05:54.225 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 23:05:54.242 -03:00 [INF] Server desktop-t1oitsg:33756:5e80089a successfully announced in 18.0734 ms
+2026-01-17 23:05:54.247 -03:00 [INF] Server desktop-t1oitsg:33756:5e80089a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 23:05:54.444 -03:00 [INF] Server desktop-t1oitsg:33756:5e80089a all the dispatchers started
+2026-01-17 23:06:06.017 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:06:06.113 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:06:06.332 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:06:06.337 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null text/plain 329.4868ms
+2026-01-17 23:06:06.363 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:06:06.370 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 7.2308ms
+2026-01-17 23:06:06.376 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:06:44.837 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/recurring - null null
+2026-01-17 23:06:44.964 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/recurring - 200 null text/html 126.9395ms
+2026-01-17 23:06:45.036 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css18220143550393 - null null
+2026-01-17 23:06:45.037 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css-dark182201399867966 - null null
+2026-01-17 23:06:45.037 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/js18220420157096 - null null
+2026-01-17 23:06:45.059 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css-dark182201399867966 - 200 null text/css 22.0924ms
+2026-01-17 23:06:45.059 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css18220143550393 - 200 null text/css 22.4428ms
+2026-01-17 23:06:45.062 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/js18220420157096 - 200 null application/javascript 25.5374ms
+2026-01-17 23:06:45.066 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 23:06:45.066 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_vs/browserLink - null null
+2026-01-17 23:06:45.076 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 10.2924ms
+2026-01-17 23:06:45.103 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.4887ms
+2026-01-17 23:06:45.127 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - null null
+2026-01-17 23:06:45.131 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:06:45.135 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - 200 null font/woff2 8.1301ms
+2026-01-17 23:06:47.832 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:06:47.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:06:47.860 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 28.2363ms
+2026-01-17 23:06:50.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:06:50.834 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:06:50.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.6824ms
+2026-01-17 23:06:53.822 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:06:53.825 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:06:53.831 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7609ms
+2026-01-17 23:06:56.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:06:56.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:06:56.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.9293ms
+2026-01-17 23:06:59.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:06:59.833 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:06:59.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.3041ms
+2026-01-17 23:07:02.828 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:02.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:02.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.4619ms
+2026-01-17 23:07:05.826 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:05.828 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:05.836 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.6071ms
+2026-01-17 23:07:08.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:08.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:08.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.3189ms
+2026-01-17 23:07:11.838 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:11.840 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:11.846 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.2546ms
+2026-01-17 23:07:14.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:14.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:14.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7512ms
+2026-01-17 23:07:17.830 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:17.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:17.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.4395ms
+2026-01-17 23:07:20.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:20.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:20.835 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 11.3809ms
+2026-01-17 23:07:23.831 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:23.834 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:23.841 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.7982ms
+2026-01-17 23:07:26.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:26.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:26.832 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.5727ms
+2026-01-17 23:07:29.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:29.831 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:29.837 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.6663ms
+2026-01-17 23:07:32.825 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:32.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:32.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.2732ms
+2026-01-17 23:07:35.836 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:35.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:35.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.487ms
+2026-01-17 23:07:38.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:38.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:38.842 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 7.5095ms
+2026-01-17 23:07:41.834 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:41.837 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:41.844 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.9993ms
+2026-01-17 23:07:44.824 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:44.827 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:44.833 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.8908ms
+2026-01-17 23:07:47.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:07:47.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:07:47.838 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 8.7473ms
+2026-01-17 23:08:07.057 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 23:08:07.173 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 23:08:07.928 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 23:08:08.063 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 23:08:08.083 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 23:08:08.164 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 23:08:08.172 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 23:08:08.174 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 23:08:08.176 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 23:08:08.181 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 23:08:08.207 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 23:08:08.448 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 23:08:08.490 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 23:08:08.518 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 23:08:08.537 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 23:08:09.074 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 23:08:09.075 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 23:08:09.112 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 23:08:09.113 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 23:08:09.114 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 23:08:09.115 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 23:08:09.116 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 23:08:09.117 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 23:08:09.133 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 23:08:09.134 -03:00 [INF] Hosting environment: Development
+2026-01-17 23:08:09.141 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 23:08:09.154 -03:00 [INF] Server desktop-t1oitsg:9744:70ceeb03 successfully announced in 19.7361 ms
+2026-01-17 23:08:09.159 -03:00 [INF] Server desktop-t1oitsg:9744:70ceeb03 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 23:08:09.348 -03:00 [INF] Server desktop-t1oitsg:9744:70ceeb03 all the dispatchers started
+2026-01-17 23:08:09.598 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health-ui - null null
+2026-01-17 23:08:09.724 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health-ui - 404 null null 137.4171ms
+2026-01-17 23:08:09.731 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/health-ui, Response status code: 404
+2026-01-17 23:08:36.240 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:08:36.250 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:08:36.448 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:08:36.451 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null text/plain 210.8499ms
+2026-01-17 23:08:36.475 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:08:36.482 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 7.8088ms
+2026-01-17 23:08:36.486 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:08:40.840 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health-ui - null null
+2026-01-17 23:08:40.845 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health-ui - 404 null null 5.0422ms
+2026-01-17 23:08:40.850 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/health-ui, Response status code: 404
+2026-01-17 23:08:53.840 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/recurring - null null
+2026-01-17 23:08:53.966 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/recurring - 200 null text/html 126.0721ms
+2026-01-17 23:08:53.991 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css182201362359689 - null null
+2026-01-17 23:08:53.991 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css-dark182201115009539 - null null
+2026-01-17 23:08:53.991 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/js182201331345793 - null null
+2026-01-17 23:08:54.002 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css182201362359689 - 200 null text/css 11.0934ms
+2026-01-17 23:08:54.002 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css-dark182201115009539 - 200 null text/css 11.0842ms
+2026-01-17 23:08:54.007 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/js182201331345793 - 200 null application/javascript 16.045ms
+2026-01-17 23:08:54.061 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 23:08:54.061 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_vs/browserLink - null null
+2026-01-17 23:08:54.067 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 5.7335ms
+2026-01-17 23:08:54.098 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.8921ms
+2026-01-17 23:08:54.104 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - null null
+2026-01-17 23:08:54.108 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:08:54.111 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - 200 null font/woff2 7.5368ms
+2026-01-17 23:08:56.823 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:08:56.826 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:08:56.848 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 25.378ms
+2026-01-17 23:08:59.832 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:08:59.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:08:59.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 10.5729ms
+2026-01-17 23:09:15.766 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 23:09:15.882 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 23:09:16.726 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-01-17 23:09:16.880 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 23:09:16.902 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-17 23:09:16.996 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2026-01-17 23:09:17.004 -03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-17 23:09:17.007 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2026-01-17 23:09:17.010 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2026-01-17 23:09:17.015 -03:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-17 23:09:17.046 -03:00 [INF] User profile is available. Using 'C:\Users\Herbert\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 23:09:17.317 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[@normalizedName='USER'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.concurrency_stamp, a.name, a.normalized_name
+FROM asp_net_roles AS a
+WHERE a.normalized_name = @normalizedName
+LIMIT 1
+2026-01-17 23:09:17.361 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='ADMIN@RESTAURANT.COM'], CommandType='"Text"', CommandTimeout='30']
+SELECT a.id, a.access_failed_count, a.concurrency_stamp, a.email, a.email_confirmed, a.lockout_enabled, a.lockout_end, a.normalized_email, a.normalized_user_name, a.password_hash, a.phone_number, a.phone_number_confirmed, a.security_stamp, a.two_factor_enabled, a.user_name
+FROM asp_net_users AS a
+WHERE a.normalized_email = @normalizedEmail
+LIMIT 2
+2026-01-17 23:09:17.396 -03:00 [INF] Start installing Hangfire SQL objects...
+2026-01-17 23:09:17.420 -03:00 [INF] Hangfire SQL objects installed.
+2026-01-17 23:09:18.024 -03:00 [INF] Now listening on: https://localhost:7272
+2026-01-17 23:09:18.025 -03:00 [INF] Now listening on: http://localhost:5076
+2026-01-17 23:09:18.067 -03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: restaurant_booking, Schema: hangfire'
+2026-01-17 23:09:18.068 -03:00 [INF] Using the following options for PostgreSQL job storage:
+2026-01-17 23:09:18.069 -03:00 [INF]     Queue poll interval: 00:00:15.
+2026-01-17 23:09:18.070 -03:00 [INF]     Invisibility timeout: 00:30:00.
+2026-01-17 23:09:18.072 -03:00 [INF]     Use sliding invisibility timeout: False.
+2026-01-17 23:09:18.073 -03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-01-17 23:09:18.091 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 23:09:18.092 -03:00 [INF] Hosting environment: Development
+2026-01-17 23:09:18.094 -03:00 [INF] Content root path: C:\Projects\RestaurantSystem\RestaurantSystem
+2026-01-17 23:09:18.110 -03:00 [INF] Server desktop-t1oitsg:26468:94bae44f successfully announced in 18.0442 ms
+2026-01-17 23:09:18.115 -03:00 [INF] Server desktop-t1oitsg:26468:94bae44f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-01-17 23:09:18.318 -03:00 [INF] Server desktop-t1oitsg:26468:94bae44f all the dispatchers started
+2026-01-17 23:09:19.741 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health-ui - null null
+2026-01-17 23:09:19.854 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health-ui - 404 null null 121.91ms
+2026-01-17 23:09:19.860 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/health-ui, Response status code: 404
+2026-01-17 23:09:22.147 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:22.154 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:22.362 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:22.366 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 219.719ms
+2026-01-17 23:09:22.387 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:22.396 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 9.3696ms
+2026-01-17 23:09:22.400 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:29.375 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:29.380 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:29.386 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:29.387 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 12.1978ms
+2026-01-17 23:09:29.418 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:29.422 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.4856ms
+2026-01-17 23:09:29.426 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:31.803 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:31.807 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:31.812 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:31.813 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 10.1708ms
+2026-01-17 23:09:31.852 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:31.855 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.871ms
+2026-01-17 23:09:31.859 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:33.146 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:33.150 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:33.155 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:33.156 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 10.041ms
+2026-01-17 23:09:33.192 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:33.196 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.8578ms
+2026-01-17 23:09:33.200 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:34.252 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:34.257 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:34.261 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:34.262 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 10.1775ms
+2026-01-17 23:09:34.293 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:34.296 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.2266ms
+2026-01-17 23:09:34.299 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:35.173 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:35.177 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:35.182 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:35.183 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 10.6796ms
+2026-01-17 23:09:35.219 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:35.222 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.562ms
+2026-01-17 23:09:35.226 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:36.122 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:36.126 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:36.131 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:36.132 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 10.5135ms
+2026-01-17 23:09:36.165 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:36.168 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.5549ms
+2026-01-17 23:09:36.172 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:37.284 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:37.289 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:37.294 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:37.295 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 10.648ms
+2026-01-17 23:09:37.329 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:37.332 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.4626ms
+2026-01-17 23:09:37.338 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:38.122 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:38.127 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:38.131 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:38.132 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 9.9374ms
+2026-01-17 23:09:38.164 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:38.167 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.3067ms
+2026-01-17 23:09:38.171 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:39.181 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:39.186 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:39.191 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:39.192 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 11.1023ms
+2026-01-17 23:09:39.226 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:39.229 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.7801ms
+2026-01-17 23:09:39.233 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:09:42.386 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/health - null null
+2026-01-17 23:09:42.390 -03:00 [INF] Executing endpoint 'Health checks'
+2026-01-17 23:09:42.395 -03:00 [INF] Executed endpoint 'Health checks'
+2026-01-17 23:09:42.397 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/health - 200 null application/json 10.5935ms
+2026-01-17 23:09:42.428 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-17 23:09:42.431 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.3179ms
+2026-01-17 23:09:42.435 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7272/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-17 23:10:05.842 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/recurring - null null
+2026-01-17 23:10:05.962 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/recurring - 200 null text/html 119.543ms
+2026-01-17 23:10:06.043 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css1822040655999 - null null
+2026-01-17 23:10:06.043 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/css-dark182201029361327 - null null
+2026-01-17 23:10:06.043 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/js182201818635144 - null null
+2026-01-17 23:10:06.060 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css-dark182201029361327 - 200 null text/css 16.9489ms
+2026-01-17 23:10:06.060 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/css1822040655999 - 200 null text/css 17.011ms
+2026-01-17 23:10:06.063 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/js182201818635144 - 200 null application/javascript 20.6216ms
+2026-01-17 23:10:06.067 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 23:10:06.067 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/_vs/browserLink - null null
+2026-01-17 23:10:06.077 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 10.1812ms
+2026-01-17 23:10:06.104 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.6611ms
+2026-01-17 23:10:06.109 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - null null
+2026-01-17 23:10:06.113 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:10:06.116 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7272/hangfire/fonts/glyphicons-halflings-regular/woff2 - 200 null font/woff2 7.2198ms
+2026-01-17 23:10:08.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:10:08.835 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:10:08.858 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 25.3858ms
+2026-01-17 23:10:11.833 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:10:11.836 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:10:11.843 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.6595ms
+2026-01-17 23:10:14.829 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:10:14.832 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:10:14.839 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.9261ms
+2026-01-17 23:10:17.836 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:10:17.838 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:10:17.845 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 9.2017ms
+2026-01-17 23:10:20.835 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7272/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-01-17 23:10:20.839 -03:00 [INF] CORS policy execution successful.
+2026-01-17 23:10:20.847 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7272/hangfire/stats - 200 null application/json 12.4086ms
