@@ -8,7 +8,7 @@ namespace RestaurantSystem.Api.Controllers;
 
 [ApiController]
 [Authorize]
-[Route("[controller]")]
+[Route("api/v1/[controller]")]
 public class DashboardController(QueryDispatcher queryDispatcher) : ControllerBase
 {
     [HttpGet("metrics")]

@@ -16,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddVersioning();
 builder.Services.AddControllers();
 builder.Services.AddTelemetry();
 builder.addSerilog();
@@ -57,7 +58,6 @@ builder.Services.AddScoped<DomainEventPublisher>();
 builder.Services.AddValidation();
 builder.Services.AddHybridCaching(builder.Configuration);
 builder.Services.AddRateLimit();
-builder.Services.AddVersioning();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("DevCors", policy =>

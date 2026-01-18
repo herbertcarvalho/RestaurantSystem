@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace RestaurantSystem.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/v1/[controller]")]
 public class AuthController(CommandDispatcher commandDispatcher) : ControllerBase
 {
     [HttpPost("login")]

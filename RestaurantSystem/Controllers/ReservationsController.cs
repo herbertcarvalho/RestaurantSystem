@@ -12,7 +12,7 @@ namespace RestaurantSystem.Api.Controllers;
 
 [ApiController]
 [Authorize]
-[Route("[controller]")]
+[Route("api/v1/[controller]")]
 public class ReservationsController(CommandDispatcher commandDispatcher, QueryDispatcher queryDispatcher) : ControllerBase
 {
     [HttpPost]

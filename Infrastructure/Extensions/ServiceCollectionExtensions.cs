@@ -22,6 +22,7 @@ using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
@@ -170,6 +171,25 @@ public static class ServiceCollectionExtensions
 
     public static void AddVersioning(this IServiceCollection services)
     {
+
+        services.AddSwaggerGen(c =>
+        {
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                BearerFormat = "JWT",
+                In = ParameterLocation.Header,
+                Scheme = "Bearer",
+                Description = "Input your Bearer token in this format - Bearer {your token here} to access this API",
+                Type = SecuritySchemeType.ApiKey,
+            });
+            c.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Version = "v1",
+                Title = "Restaurant System",
+            });
+        });
+
         services.AddApiVersioning(options =>
         {
             options.DefaultApiVersion = new ApiVersion(1, 0);
