@@ -22,7 +22,7 @@
     async function connect() {
 
         connection = new signalR.HubConnectionBuilder()
-            .withUrl("https://localhost:7272/hubs/reservations")
+            .withUrl("http://localhost:5000/hubs/reservations")
             .withAutomaticReconnect()
             .build();
 
