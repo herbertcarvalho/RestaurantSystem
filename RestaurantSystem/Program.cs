@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddTelemetry();
 builder.addSerilog();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -46,6 +47,7 @@ builder.Services.AddCors(options =>
 });
 var app = builder.Build();
 app.UseCors("DevCors");
+app.MapPrometheusScrapingEndpoint(); // default: /metrics
 
 app.MapHubs();
 

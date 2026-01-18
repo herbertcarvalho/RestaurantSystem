@@ -22,6 +22,9 @@ using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using Serilog;
 using System.Text;
 using System.Threading.RateLimiting;
@@ -189,5 +192,25 @@ public static class ServiceCollectionExtensions
         webApplicationBuilder.Host.UseSerilog();
 
         Serilog.Debugging.SelfLog.Enable(Console.Error);
+    }
+
+    public static void AddTelemetry(this IServiceCollection services)
+    {
+        //services.AddSingleton(new Meter("MyBookingService.Meter"));
+        services.AddOpenTelemetry()
+        .WithTracing(tracerProviderBuilder =>
+        {
+            tracerProviderBuilder
+                .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("MyBookingService"))
+                .AddAspNetCoreInstrumentation()
+                 .AddConsoleExporter();
+        })
+        .WithMetrics(metricsBuilder =>
+        {
+            metricsBuilder
+                .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("MyBookingService"))
+                .AddAspNetCoreInstrumentation()
+                .AddPrometheusExporter();
+        });
     }
 }
