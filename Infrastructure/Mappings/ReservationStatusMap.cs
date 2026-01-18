@@ -19,9 +19,10 @@ internal class ReservationStatusMap : IEntityTypeConfiguration<ReservationStatus
             new ReservationStatus { Id = 1, Name = "PENDING" },
             new ReservationStatus { Id = 2, Name = "CONFIRMED" },
             new ReservationStatus { Id = 3, Name = "CHECKED IN" },
-            new ReservationStatus { Id = 4, Name = "COMPLETED" },
-            new ReservationStatus { Id = 5, Name = "CANCELLED" },
-            new ReservationStatus { Id = 6, Name = "NO SHOW" }
+            new ReservationStatus { Id = 4, Name = "REVIEW" },
+            new ReservationStatus { Id = 5, Name = "COMPLETED" },
+            new ReservationStatus { Id = 6, Name = "CANCELLED" },
+            new ReservationStatus { Id = 7, Name = "NO SHOW" }
         );
     }
 }
