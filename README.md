@@ -40,37 +40,43 @@ O sistema gerencia o ciclo de vida da reserva através dos seguintes estados:
 
 ---
 
-## 🔐 Autenticação e Segurança
+## 🔐 Autenticação
 
-O sistema utiliza um modelo de usuário administrativo único para gestão do restaurante.
+O sistema opera com um modelo de **usuário único**. Não há fluxo de cadastro de novos usuários.
 
 * **Email:** `admin@restaurant.com`
 * **Senha:** `Admin123!`
 
-### Regras de Login
-* **Refresh Token:** Implementado para renovação de sessão sem necessidade de novo login manual.
-* **Invalidating Strategy:** Ao realizar um login, todos os refresh tokens antigos do usuário são invalidados, garantindo que apenas a sessão mais recente permaneça ativa.
+### Regras de Segurança e Tokens
+* **Refresh Token:** Implementado para renovação automática de sessão.
+* **Invalidating Strategy:** Ao realizar um novo login, **todos os refresh tokens antigos são invalidados**, garantindo que apenas a sessão mais recente seja válida.
 
 ---
 
-## 🛠️ Regras de Negócio
+## 🛠️ Funcionalidades e Regras de Negócio
 
-### Fluxo de Reserva
-* **Criação Automática:** Caso o cliente não exista na base de dados, ele é criado automaticamente ao realizar uma reserva.
-* **Validação de Transições:**
-    * Confirmação permitida apenas para status `PENDING`.
-    * Check-in permitido apenas para status `CONFIRMED`.
-    * Avaliação permitida apenas após o restaurante marcar como `REVIEW`.
+### Fluxo da Reserva
+* **Criar Reserva:** Status inicial `PENDING`. Se o cliente não existir, o sistema o cria automaticamente. Dispara um evento de criação.
+* **Confirmar Reserva:** Permitido apenas para status `PENDING`. Dispara um evento de confirmação.
+* **Check-In:** Permitido apenas para reservas `CONFIRMED`. Dispara um evento de check-in.
+* **Completar Reserva:** Após o check-in, o restaurante marca a reserva como `REVIEW`.
+* **Avaliar (Review):** Adiciona pontuação ao restaurante. Só pode ser realizado após o status `REVIEW`. Altera o status final para `COMPLETED`.
 
 ### Política de Cancelamento e Reembolso
-O estorno é calculado automaticamente com base no tempo de antecedência:
+O cancelamento é permitido desde que a reserva não esteja como `COMPLETED`, `CANCELLED` ou `NO_SHOW`. O reembolso segue a regra:
 
-* **> 24h de antecedência:** 100% de reembolso.
-* **Entre 2h e 24h de antecedência:** 50% de reembolso.
-* **< 2h de antecedência:** Sem reembolso (0%).
+| Tempo de Antecedência | Reembolso |
+| :--- | :--- |
+| Mais de 24h | **100% do valor** |
+| Entre 2h e 24h | **50% do valor** |
+| Menos de 2h | **Sem reembolso** |
 
 ---
 
 ## ⚡ Observações Técnicas
 
-* **Eventos:** Ações importantes (Criação, Confirmação, Check-in) disparam eventos de domínio para permitir integrações futuras com serviços de notificação ou
+* **Eventos de Domínio:** São disparados em todas as ações críticas (Criação, Confirmação, Check-in) para permitir integrações futuras com notificações (E-mail/SMS) ou Analytics.
+* **Escalabilidade:** O uso de CQRS separa as operações de leitura e escrita, otimizando a performance do banco de dados.
+* **Status do Projeto:** O sistema está parcialmente implementado. A prioridade atual é a finalização dos Handlers de domínio.
+
+---
